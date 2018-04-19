@@ -1,0 +1,27 @@
+{
+  "name": "@ecomfe/eslint-config",
+  "version": "1.0.0",
+  "description": "eslint config for ee-fe team",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npm publish --access public",
+    "lint": "eslint -c strict.js *.js",
+    "prepublishOnly": "npm run lint"
+  },
+  "author": "otakustay",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": ">=4",
+    "babel-eslint": ">=8",
+    "eslint-plugin-babel": ">=5",
+    "eslint-plugin-import": ">=2",
+    "eslint-plugin-react": ">=7"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-plugin-babel": "^5.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-react": "^7.7.0"
+  }
+}
