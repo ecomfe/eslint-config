@@ -20,6 +20,10 @@ EFE团队使用的`eslint`配置。
 }
 ```
 
+## 扩展
+
+你可以自行安装`eslint-plugin-react`及`eslint-plugin-import`这两个插件来启用对应的规则，仅安装即可，不需要额外配置。
+
 ## 细节
 
 默认配置`index.js`与[fecs](https://github.com/ecomfe/fecs)相同，但临时移除了`fecs-*`的规则。

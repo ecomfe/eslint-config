@@ -1,4 +1,6 @@
 /* eslint-disable import/unambiguous, import/no-commonjs */
+const {plugins, partials} = require('./utils');
+
 module.exports = {
     parser: 'babel-eslint',
     parserOptions: {
@@ -7,7 +9,7 @@ module.exports = {
             jsx: true
         }
     },
-    plugins: ['babel', 'react', 'import'],
+    plugins: plugins(),
     env: {
         browser: true,
         node: true,
@@ -261,140 +263,7 @@ module.exports = {
         'wrap-regex': 'off',
         'yield-star-spacing': 'off',
         'yoda': 'warn',
-
         'babel/object-curly-spacing': ['error', 'never'],
-
-        'import/no-unresolved': 'error',
-        'import/named': 'error',
-        'import/default': 'error',
-        'import/namespace': 'off',
-        'import/no-restricted-paths': 'off',
-        'import/no-absolute-path': 'error',
-        'import/no-dynamic-require': 'warn',
-        'import/no-internal-modules': 'off',
-        'import/no-webpack-loader-syntax': 'warn',
-        'import/export': 'error',
-        'import/no-named-as-default': 'warn',
-        'import/no-named-as-default-member': 'error',
-        'import/no-deprecated': 'error',
-        'import/no-extraneous-dependencies': [
-            'error',
-            {devDependencies: true, optionalDependencies: true, peerDependencies: true}
-        ],
-        'import/no-mutable-exports': 'error',
-        'import/unambiguous': 'warn',
-        'import/no-commonjs': 'error',
-        'import/no-amd': 'error',
-        'import/no-nodejs-modules': 'error',
-        'import/first': 'error',
-        'import/no-duplicates': 'error',
-        'import/no-namespace': 'off',
-        'import/extensions': ['error', 'always', {js: 'never', jsx: 'never', es: 'never', mjs: 'never'}],
-        'import/order': ['error', {groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index']}],
-        'import/newline-after-import': 'error',
-        'import/prefer-default-export': 'off',
-        'import/max-dependencies': 'off',
-        'import/no-unassigned-import': 'off',
-        'import/no-named-default': 'error',
-
-        'react/default-props-match-prop-types': 'error',
-        'react/display-name': 'off',
-        'react/forbid-component-props': 'off',
-        'react/forbid-elements': 'off',
-        'react/forbid-foreign-prop-types': 'warn',
-        'react/forbid-prop-types': 'off',
-        'react/jsx-boolean-value': 'error',
-        'react/jsx-closing-bracket-location': 'error',
-        'react/jsx-curly-spacing': 'error',
-        'react/jsx-equals-spacing': 'error',
-        'react/jsx-filename-extension': ['error', {extensions: ['.js', '.jsx', '.es']}],
-        'react/jsx-first-prop-new-line': 'error',
-        'react/jsx-handler-names': 'off',
-        'react/jsx-indent-props': ['error', 4],
-        'react/jsx-indent': ['error', 4],
-        'react/jsx-key': 'error',
-        'react/jsx-max-props-per-line': ['error', {when: 'multiline', maximum: 1}],
-        'react/jsx-no-bind': ['warn', {ignoreRefs: true}],
-        'react/jsx-no-comment-textnodes': 'warn',
-        'react/jsx-no-duplicate-props': 'error',
-        'react/jsx-no-literals': 'off',
-        'react/jsx-no-target-blank': 'error',
-        'react/jsx-no-undef': 'error',
-        'react/jsx-pascal-case': 'error',
-        'react/jsx-sort-props': 'off',
-        'react/jsx-tag-spacing': 'error',
-        'react/jsx-uses-react': 'off',
-        'react/jsx-uses-vars': 'error',
-        'react/jsx-wrap-multilines': 'error',
-        'react/no-array-index-key': 'error',
-        'react/no-children-prop': 'error',
-        'react/no-danger-with-children': 'error',
-        'react/no-danger': 'warn',
-        'react/no-deprecated': 'error',
-        // TODO: 当前下面2个规则会在异步函数里都报错，等官方解决后再打开
-        //
-        // https://github.com/yannickcr/eslint-plugin-react/issues/1110
-        'react/no-did-mount-set-state': 'off',
-        'react/no-did-update-set-state': 'off',
-        'react/no-direct-mutation-state': 'error',
-        'react/no-find-dom-node': 'error',
-        'react/no-is-mounted': 'error',
-        'react/no-multi-comp': ['error', {ignoreStateless: true}],
-        'react/no-render-return-value': 'error',
-        'react/no-set-state': 'off',
-        'react/no-string-refs': 'error',
-        'react/no-unescaped-entities': 'error',
-        'react/no-unknown-property': 'error',
-        'react/no-unused-prop-types': 'warn',
-        'react/no-will-update-set-state': 'error',
-        'react/prefer-es6-class': 'error',
-        'react/prefer-stateless-function': 'error',
-        'react/prop-types': 'off',
-        'react/react-in-jsx-scope': 'off',
-        'react/require-default-props': 'error',
-        'react/require-optimization': 'off',
-        'react/require-render-return': 'error',
-        'react/self-closing-comp': ['error', {html: false}],
-        'react/sort-prop-types': 'off',
-        'react/style-prop-object': 'error',
-        'react/void-dom-elements-no-children': 'error',
-        'react/sort-comp': [
-            0,
-            {
-                order: [
-                    'static-properties',
-                    'static-methods',
-                    'state',
-                    'properties',
-                    'lifecycle',
-                    'everything-else',
-                    'render'
-                ],
-                groups: {
-                    'static-properties': [
-                        'displayName',
-                        'propTypes',
-                        'contextTypes',
-                        'childContextTypes',
-                        'mixins',
-                        'statics'
-                    ],
-                    'lifecycle': [
-                        'getDefaultProps',
-                        'getInitialState',
-                        'constructor',
-                        'getChildContext',
-                        'componentWillMount',
-                        'componentDidMount',
-                        'componentWillReceiveProps',
-                        'shouldComponentUpdate',
-                        'componentWillUpdate',
-                        'componentDidUpdate',
-                        'componentDidCatch',
-                        'componentWillUnmount'
-                    ]
-                }
-            }
-        ]
+        ...partials('strict')
     }
 };
