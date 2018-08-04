@@ -24,7 +24,6 @@ exports.default = {
     'import/no-namespace': 'off',
     'import/extensions': [
         'error',
-        'always',
         {
             '.js': 'never,',
             '.jsx': 'never,',
