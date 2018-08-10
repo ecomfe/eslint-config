@@ -181,7 +181,7 @@ exports.default = {
 
 exports.strict = {
     ...exports.default,
-    'react/forbid-component-props': 'warn',
+    'react/forbid-component-props': 'off',
     'react/forbid-prop-types': 'warn',
     'react/jsx-handler-names': [
         'error',
