@@ -184,7 +184,7 @@ exports.strict = {
     'react/forbid-component-props': 'off',
     'react/forbid-prop-types': 'warn',
     'react/jsx-handler-names': [
-        'error',
+        'off',
         {
             'eventHandlerPrefix': '.*',
             'eventHandlerPropPrefix': 'on'
