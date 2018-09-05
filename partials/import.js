@@ -30,7 +30,19 @@ exports.default = {
             '.es': 'never'
         }
     ],
-    'import/order': 'warn',
+    'import/order': [
+        'warn',
+        {
+            groups: [
+                'builtin',
+                'external',
+                'internal',
+                'parent',
+                'sibling',
+                'index'
+            ]
+        }
+    ],
     'import/newline-after-import': 'error',
     'import/prefer-default-export': 'off',
     'import/max-dependencies': 'off',

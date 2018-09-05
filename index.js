@@ -15,6 +15,11 @@ module.exports = {
         node: true,
         es6: true
     },
+    settings: {
+        react: {
+            version: '16.3'
+        }
+    },
     rules: {
         'generator-star-spacing': [
             'error',
