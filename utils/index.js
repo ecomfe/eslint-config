@@ -15,7 +15,7 @@ const pluginDependencies = ['react', 'import'];
 
 exports.plugins = () => [
     'babel',
-    ...pluginDependencies.filter(isPluginInstalled)
+    ...pluginDependencies.filter(isPluginInstalled),
 ];
 
 exports.partials = type => pluginDependencies.reduce(

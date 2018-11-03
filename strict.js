@@ -6,14 +6,14 @@ module.exports = {
     parserOptions: {
         sourceType: 'module',
         ecmaFeatures: {
-            jsx: true
-        }
+            jsx: true,
+        },
     },
     plugins: plugins(),
     env: {
         browser: true,
         node: true,
-        es6: true
+        es6: true,
     },
     rules: {
         'accessor-pairs': 'error',
@@ -30,7 +30,16 @@ module.exports = {
         'camelcase': 'error',
         'capitalized-comments': 'off',
         'class-methods-use-this': 'off',
-        'comma-dangle': 'error',
+        'comma-dangle': [
+            'error',
+            {
+                'arrays': 'always-multiline',
+                'objects': 'always-multiline',
+                'imports': 'always-multiline',
+                'exports': 'always-multiline',
+                'functions': 'never',
+            },
+        ],
         'comma-spacing': ['error', {before: false, after: true}],
         'comma-style': ['error', 'last'],
         'complexity': ['warn', 10],
@@ -264,6 +273,6 @@ module.exports = {
         'yield-star-spacing': 'off',
         'yoda': 'warn',
         'babel/object-curly-spacing': ['error', 'never'],
-        ...partials('strict')
-    }
+        ...partials('strict'),
+    },
 };

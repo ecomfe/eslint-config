@@ -4,10 +4,10 @@ const {default: reactDefault, strict: reactStrict} = require('./react');
 
 exports.default = {
     import: importDefault,
-    react: reactDefault
+    react: reactDefault,
 };
 
 exports.strict = {
     import: importStrict,
-    react: reactStrict
+    react: reactStrict,
 };

@@ -27,8 +27,8 @@ exports.default = {
         {
             '.js': 'never,',
             '.jsx': 'never,',
-            '.es': 'never'
-        }
+            '.es': 'never',
+        },
     ],
     'import/order': [
         'warn',
@@ -39,15 +39,15 @@ exports.default = {
                 'internal',
                 'parent',
                 'sibling',
-                'index'
-            ]
-        }
+                'index',
+            ],
+        },
     ],
     'import/newline-after-import': 'error',
     'import/prefer-default-export': 'off',
     'import/max-dependencies': 'off',
     'import/no-unassigned-import': 'off',
-    'import/no-named-default': 'error'
+    'import/no-named-default': 'error',
 };
 
 exports.strict = {
@@ -58,11 +58,11 @@ exports.strict = {
         {
             devDependencies: true,
             optionalDependencies: true,
-            peerDependencies: true
-        }
+            peerDependencies: true,
+        },
     ],
     'import/no-mutable-exports': 'warn',
     'import/no-commonjs': 'error',
     'import/no-amd': 'error',
-    'import/no-named-default': 'error'
+    'import/no-named-default': 'error',
 };

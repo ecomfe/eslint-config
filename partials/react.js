@@ -8,19 +8,19 @@ exports.default = {
     'react/forbid-prop-types': 'off',
     'react/jsx-boolean-value': [
         'error',
-        'never'
+        'never',
     ],
     'react/jsx-closing-bracket-location': [
         'error',
-        'line-aligned'
+        'line-aligned',
     ],
     'react/jsx-curly-spacing': [
         'error',
-        'never'
+        'never',
     ],
     'react/jsx-equals-spacing': [
         'error',
-        'never'
+        'never',
     ],
     'react/jsx-filename-extension': [
         'error',
@@ -28,44 +28,44 @@ exports.default = {
             'extensions': [
                 '.js',
                 '.jsx',
-                '.es'
-            ]
-        }
+                '.es',
+            ],
+        },
     ],
     'react/jsx-first-prop-new-line': [
         'error',
-        'multiline-multiprop'
+        'multiline-multiprop',
     ],
     'react/jsx-handler-names': 'off',
     'react/jsx-indent-props': [
         'error',
-        4
+        4,
     ],
     'react/jsx-indent': [
         'error',
-        4
+        4,
     ],
     'react/jsx-key': 'error',
     'react/jsx-max-props-per-line': [
         'error',
         {
-            'when': 'multiline'
-        }
+            'when': 'multiline',
+        },
     ],
     'react/jsx-no-bind': [
         'warn',
         {
             'ignoreRefs': true,
             'allowArrowFunctions': false,
-            'allowBind': false
-        }
+            'allowBind': false,
+        },
     ],
     'react/jsx-no-comment-textnodes': 'warn',
     'react/jsx-no-duplicate-props': [
         'error',
         {
-            'ignoreCase': true
-        }
+            'ignoreCase': true,
+        },
     ],
     'react/jsx-no-literals': 'off',
     'react/jsx-no-target-blank': 'error',
@@ -73,8 +73,8 @@ exports.default = {
     'react/jsx-pascal-case': [
         'error',
         {
-            'allowAllCaps': true
-        }
+            'allowAllCaps': true,
+        },
     ],
     'react/jsx-sort-props': 'off',
     'react/jsx-tag-spacing': [
@@ -82,8 +82,8 @@ exports.default = {
         {
             'closingSlash': 'never',
             'beforeSelfClosing': 'always',
-            'afterOpening': 'never'
-        }
+            'afterOpening': 'never',
+        },
     ],
     'react/jsx-uses-react': 'off',
     'react/jsx-uses-vars': 'error',
@@ -93,8 +93,8 @@ exports.default = {
             'declaration': true,
             'assignment': true,
             'return': true,
-            'arrow': true
-        }
+            'arrow': true,
+        },
     ],
     'react/no-array-index-key': 'error',
     'react/no-children-prop': 'error',
@@ -110,8 +110,8 @@ exports.default = {
     'react/no-multi-comp': [
         'error',
         {
-            'ignoreStateless': true
-        }
+            'ignoreStateless': true,
+        },
     ],
     'react/no-render-return-value': 'error',
     'react/no-set-state': 'off',
@@ -121,7 +121,7 @@ exports.default = {
     'react/no-unused-prop-types': 'off',
     'react/prefer-es6-class': [
         'error',
-        'always'
+        'always',
     ],
     'react/prefer-stateless-function': 'error',
     'react/prop-types': 'off',
@@ -133,8 +133,8 @@ exports.default = {
         'error',
         {
             'component': true,
-            'html': false
-        }
+            'html': false,
+        },
     ],
     'react/sort-prop-types': 'off',
     'react/style-prop-object': 'error',
@@ -149,7 +149,7 @@ exports.default = {
                 'properties',
                 'lifecycle',
                 'everything-else',
-                'render'
+                'render',
             ],
             groups: {
                 'static-properties': [
@@ -158,7 +158,7 @@ exports.default = {
                     'contextTypes',
                     'childContextTypes',
                     'mixins',
-                    'statics'
+                    'statics',
                 ],
                 'lifecycle': [
                     'getDefaultProps',
@@ -172,11 +172,11 @@ exports.default = {
                     'componentWillUpdate',
                     'componentDidUpdate',
                     'componentDidCatch',
-                    'componentWillUnmount'
-                ]
-            }
-        }
-    ]
+                    'componentWillUnmount',
+                ],
+            },
+        },
+    ],
 };
 
 exports.strict = {
@@ -186,15 +186,15 @@ exports.strict = {
         'off',
         {
             'eventHandlerPrefix': '.*',
-            'eventHandlerPropPrefix': 'on'
-        }
+            'eventHandlerPropPrefix': 'on',
+        },
     ],
     'react/jsx-no-bind': [
         'error',
         {
             'ignoreRefs': true,
             'allowArrowFunctions': false,
-            'allowBind': false
-        }
-    ]
+            'allowBind': false,
+        },
+    ],
 };
