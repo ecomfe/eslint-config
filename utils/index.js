@@ -11,7 +11,7 @@ const isPluginInstalled = name => {
     }
 };
 
-const pluginDependencies = ['react', 'import'];
+const pluginDependencies = ['react', 'import', 'react-hooks'];
 
 exports.plugins = () => [
     'babel',
