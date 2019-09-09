@@ -163,10 +163,7 @@ module.exports = {
         'no-new-object': 'error',
         'no-spaced-func': 'error',
         'no-trailing-spaces': 'error',
-        'no-extra-parens': [
-            'error',
-            'functions',
-        ],
+        'no-extra-parens': 'off',
         'no-mixed-spaces-and-tabs': 'error',
         'one-var': [
             'error',
