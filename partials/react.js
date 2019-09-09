@@ -29,6 +29,7 @@ exports.default = {
                 '.js',
                 '.jsx',
                 '.es',
+                '.tsx',
             ],
         },
     ],
