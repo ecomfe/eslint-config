@@ -1,6 +1,3 @@
-/* eslint-disable import/unambiguous, import/no-commonjs */
-const {plugins, partials} = require('./utils');
-
 module.exports = {
     parser: 'babel-eslint',
     parserOptions: {
@@ -9,7 +6,9 @@ module.exports = {
             jsx: true,
         },
     },
-    plugins: plugins(),
+    plugins: [
+        'babel',
+    ],
     env: {
         browser: true,
         node: true,
@@ -273,6 +272,5 @@ module.exports = {
         'yield-star-spacing': 'off',
         'yoda': 'warn',
         'babel/object-curly-spacing': ['error', 'never'],
-        ...partials('strict'),
     },
 };

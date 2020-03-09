@@ -5,22 +5,29 @@
   "main": "index.js",
   "scripts": {
     "deploy": "npm publish --access public",
-    "lint": "eslint partials utils *.js",
+    "lint": "eslint import react *.js",
     "prepublishOnly": "npm run lint"
   },
   "author": "otakustay",
   "license": "MIT",
+  "dependencies": {
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0"
+  },
   "peerDependencies": {
-    "babel-eslint": ">=8",
-    "eslint": ">=4",
-    "eslint-plugin-babel": ">=5"
+    "babel-eslint": ">=10",
+    "eslint": ">=6",
+    "eslint-plugin-babel": "^5.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.13.0",
-    "eslint-plugin-babel": "^5.0.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-react": "^7.7.0",
-    "eslint-plugin-react-hooks": "^1.0.2"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-babel": "^5.3.0"
+  },
+  "optionalDependencies": {
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0"
   }
 }

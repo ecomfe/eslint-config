@@ -1,6 +1,3 @@
-/* eslint-disable import/unambiguous, import/no-commonjs */
-const {plugins, partials} = require('./utils');
-
 module.exports = {
     parser: 'babel-eslint',
     parserOptions: {
@@ -9,16 +6,13 @@ module.exports = {
             jsx: true,
         },
     },
-    plugins: plugins(),
+    plugins: [
+        'babel',
+    ],
     env: {
         browser: true,
         node: true,
         es6: true,
-    },
-    settings: {
-        react: {
-            version: '16.3',
-        },
     },
     rules: {
         'generator-star-spacing': [
@@ -271,6 +265,5 @@ module.exports = {
         'unicode-bom': 'warn',
         'max-statements-per-line': 'error',
         'no-useless-constructor': 'warn',
-        ...partials('default'),
     },
 };
