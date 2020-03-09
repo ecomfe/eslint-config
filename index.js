@@ -19,8 +19,8 @@ module.exports = {
             'error',
             4,
             {
-                SwitchCase: 1
-            }
+                SwitchCase: 1,
+            },
         ],
         'indent-legacy': 'off',
         'generator-star-spacing': [

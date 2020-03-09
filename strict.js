@@ -64,6 +64,14 @@ module.exports = {
         'id-blacklist': 'off',
         'id-length': 'off',
         'id-match': 'off',
+        'indent': [
+            'error',
+            4,
+            {
+                SwitchCase: 1,
+            },
+        ],
+        'indent-legacy': 'off',
         'init-declarations': 'warn',
         'jsx-quotes': ['error', 'prefer-double'],
         'key-spacing': ['error', {beforeColon: false, afterColon: true}],

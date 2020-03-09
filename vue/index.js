@@ -1,4 +1,4 @@
-const {rules: base} = require('./index');
+const {rules: base} = require('../index');
 
 module.exports = {
     plugins: ['vue'],
