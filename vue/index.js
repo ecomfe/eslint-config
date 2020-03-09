@@ -1,6 +1,11 @@
-const {rules: base} = require('../index');
+const {parserOptions, rules: base} = require('../index');
 
 module.exports = {
+    parser: 'vue-eslint-parser',
+    parserOptions: {
+        ...parserOptions,
+        parser: 'babel-eslint',
+    },
     plugins: ['vue'],
     rules: {
         'vue/comment-directive': 'error',
@@ -128,7 +133,7 @@ module.exports = {
         'vue/no-reserved-component-names': 'error',
         'vue/no-restricted-syntax': base['no-restricted-syntax'] || 'off',
         'vue/no-unsupported-features': 'off',
-        'vue/object-curly-spacing': base['object-curly-spacing'] || 'off',
+        'vue/object-curly-spacing': base['babel/object-curly-spacing'] || 'off',
         'vue/script-indent': [
             'error',
             4,
