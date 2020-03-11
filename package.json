@@ -1,7 +1,7 @@
 {
   "name": "@ecomfe/eslint-config",
   "version": "3.0.0",
-  "description": "eslint config for ee-fe team",
+  "description": "ESLint config for Baidu EFE.",
   "main": "index.js",
   "repository": "ecomfe/eslint-config",
   "scripts": {
@@ -23,11 +23,5 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-babel": "^5.3.0"
-  },
-  "optionalDependencies": {
-    "eslint-plugin-import": "2.x",
-    "eslint-plugin-react": "7.x",
-    "eslint-plugin-react-hooks": "2.x",
-    "eslint-plugin-vue": "6.x"
   }
 }
