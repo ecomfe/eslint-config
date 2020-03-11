@@ -15,6 +15,14 @@ module.exports = {
         es6: true,
     },
     rules: {
+        'indent': [
+            'error',
+            4,
+            {
+                SwitchCase: 1,
+            },
+        ],
+        'indent-legacy': 'off',
         'generator-star-spacing': [
             'error',
             {

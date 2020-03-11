@@ -3,22 +3,21 @@
   "version": "3.0.0",
   "description": "eslint config for ee-fe team",
   "main": "index.js",
+  "repository": "ecomfe/eslint-config",
   "scripts": {
     "deploy": "npm publish --access public",
     "lint": "eslint import react *.js",
     "prepublishOnly": "npm run lint"
   },
-  "author": "otakustay",
+  "author": "otakustay <otakustay@gmail.com> (https://github.com/otakustay)",
+  "contributors": [
+    "GU Yiling <justice360@gmail.com> (https://github.com/Justineo)"
+  ],
   "license": "MIT",
-  "dependencies": {
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^2.5.0"
-  },
   "peerDependencies": {
-    "babel-eslint": ">=10",
-    "eslint": ">=6",
-    "eslint-plugin-babel": "^5.0.0"
+    "babel-eslint": "10.x",
+    "eslint": "6.x",
+    "eslint-plugin-babel": "5.x"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -26,8 +25,9 @@
     "eslint-plugin-babel": "^5.3.0"
   },
   "optionalDependencies": {
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^2.5.0"
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "2.x",
+    "eslint-plugin-vue": "6.x"
   }
 }
