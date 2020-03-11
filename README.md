@@ -92,7 +92,7 @@ npm i -D eslint-plugin-vue
 module.exports = {
     extends: [
         '@ecomfe/eslint-config',
-        '@ecomfe/eslint-config/vue',
+        '@ecomfe/eslint-config/vue', // 注意顺序
         // 或者选择严格模式
         // '@ecomfe/eslint-config/vue/strict',
     ],
@@ -101,6 +101,6 @@ module.exports = {
 
 ## 细节
 
-默认配置 `index.js` 与 [FECS](https://github.com/ecomfe/fecs) 相同，但临时移除了 `fecs-*` 的规则。
+默认配置 `@ecomfe/eslint-config` 与 [FECS](https://github.com/ecomfe/fecs) 相同，但临时移除了 `fecs-*` 的规则。
 
 严格版配置 `*/strict` 开启了更严格的规则。
