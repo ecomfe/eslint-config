@@ -1,7 +1,20 @@
-const {rules: base} = require('../index');
+const {parserOptions, rules: base} = require('../index');
 
 module.exports = {
+    parser: 'vue-eslint-parser',
+    parserOptions: {
+        ...parserOptions,
+        parser: 'babel-eslint',
+    },
     plugins: ['vue'],
+    overrides: [
+        {
+            files: ['*.vue'],
+            rules: {
+                'indent': 'off',
+            },
+        },
+    ],
     rules: {
         'vue/comment-directive': 'error',
         'vue/jsx-uses-vars': 'error',
@@ -17,6 +30,7 @@ module.exports = {
         'vue/no-reserved-keys': 'error',
         'vue/no-shared-component-data': 'error',
         'vue/no-template-key': 'error',
+        'vue/no-textarea-mustache': 'error',
         'vue/no-unused-vars': 'error',
         'vue/no-unused-components': 'error',
         'vue/no-use-v-if-with-v-for': 'warn',
@@ -128,7 +142,8 @@ module.exports = {
         'vue/no-reserved-component-names': 'error',
         'vue/no-restricted-syntax': base['no-restricted-syntax'] || 'off',
         'vue/no-unsupported-features': 'off',
-        'vue/object-curly-spacing': base['object-curly-spacing'] || 'off',
+        'vue/object-curly-spacing': base['babel/object-curly-spacing'] || 'off',
+        'vue/require-direct-export': 'error',
         'vue/script-indent': [
             'error',
             4,
@@ -142,12 +157,4 @@ module.exports = {
         'vue/valid-v-bind-sync': 'error',
         'vue/valid-v-slot': 'error',
     },
-    'overrides': [
-        {
-            'files': ['*.vue'],
-            'rules': {
-                'indent': 'off',
-            },
-        },
-    ],
 };
