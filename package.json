@@ -6,7 +6,7 @@
   "repository": "ecomfe/eslint-config",
   "scripts": {
     "deploy": "npm publish --access public",
-    "lint": "eslint import react vue *.js",
+    "lint": "eslint import react vue typeScript *.js",
     "prepublishOnly": "npm run lint"
   },
   "author": "otakustay <otakustay@gmail.com> (https://github.com/otakustay)",
@@ -17,7 +17,33 @@
   "peerDependencies": {
     "babel-eslint": "10.x",
     "eslint": "6.x",
-    "eslint-plugin-babel": "5.x"
+    "eslint-plugin-babel": "5.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "2.x",
+    "eslint-plugin-vue": "6.x",
+    "@typescript-eslint/parser": "2.x",
+    "@typescript-eslint/eslint-plugin": "2.x"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-import": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    },
+    "eslint-plugin-vue": {
+      "optional": true
+    },
+    "@typescript-eslint/parser": {
+      "optional": true
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
