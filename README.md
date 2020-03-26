@@ -99,6 +99,29 @@ module.exports = {
 };
 ```
 
+### TypeScript
+
+如果需要检测 TypeScript 代码，需要安装相关插件：
+
+```shell
+npm i -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+
+**除此之外，需要先安装`typescript`包，并在项目根目录有`tsconfig.json`文件**。
+
+并在`.eslintrc.js`中引用：
+
+```js
+module.exports = {
+    extends: [
+        '@ecomfe/eslint-config',
+        '@ecomfe/eslint-config/typescript',
+        // 或者选择严格模式
+        // '@ecomfe/eslint-config/typescript/strict',
+    ],
+};
+```
+
 ## 细节
 
 默认配置 `@ecomfe/eslint-config` 与 [FECS](https://github.com/ecomfe/fecs) 相同，但临时移除了 `fecs-*` 的规则。
