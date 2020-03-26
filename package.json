@@ -6,7 +6,7 @@
   "repository": "ecomfe/eslint-config",
   "scripts": {
     "deploy": "npm publish --access public",
-    "lint": "eslint import react vue typeScript *.js",
+    "lint": "eslint import react vue typescript *.js",
     "prepublishOnly": "npm run lint"
   },
   "author": "otakustay <otakustay@gmail.com> (https://github.com/otakustay)",
