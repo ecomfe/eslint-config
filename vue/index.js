@@ -106,7 +106,7 @@ module.exports = {
         'vue/this-in-template': 'error',
         'vue/array-bracket-spacing': base['array-bracket-spacing'] || 'off',
         'vue/arrow-spacing': base['arrow-spacing'] || 'off',
-        'vue/block-spacing': base['vue/block-spacing'] || 'off',
+        'vue/block-spacing': base['block-spacing'] || 'off',
         'vue/brace-style': base['brace-style'] || 'off',
         'vue/camelcase': base.camelcase || 'off',
         'vue/comma-dangle': base['comma-dangle'] || 'off',
