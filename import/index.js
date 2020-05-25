@@ -28,7 +28,7 @@ module.exports = {
         'import/extensions': [
             'error',
             {
-                '.js': 'never,',
+                '.js': 'never',
                 '.jsx': 'never,',
                 '.es': 'never',
             },
