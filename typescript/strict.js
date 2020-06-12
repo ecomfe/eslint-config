@@ -6,7 +6,7 @@ module.exports = {
             ...defaults,
             rules: {
                 ...defaults.rules,
-                '@typescript-eslint/ban-ts-ignore': 'warn',
+                '@typescript-eslint/ban-ts-comment': 'warn',
                 '@typescript-eslint/no-floating-promises': 'warn',
             },
         },
