@@ -22,7 +22,7 @@ module.exports = {
                 '@typescript-eslint/await-thenable': 'warn',
                 '@typescript-eslint/ban-ts-comment': 'off',
                 '@typescript-eslint/ban-types': 'error',
-                '@typescript-eslint/naming-convention': 'error',
+                '@typescript-eslint/naming-convention': 'off',
                 '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
                 '@typescript-eslint/explicit-function-return-type': 'off',
                 '@typescript-eslint/explicit-member-accessibility': ['error', {accessibility: 'no-public'}],
