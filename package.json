@@ -1,6 +1,6 @@
 {
   "name": "@ecomfe/eslint-config",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "ESLint config for Baidu EFE.",
   "main": "index.js",
   "repository": "ecomfe/eslint-config",
