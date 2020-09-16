@@ -1,8 +1,10 @@
 module.exports = {
-    plugins: [
-        'react',
-        'react-hooks',
-    ],
+    plugins: ['react', 'react-hooks'],
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     rules: {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
@@ -12,66 +14,40 @@ module.exports = {
         'react/forbid-elements': 'off',
         'react/forbid-foreign-prop-types': 'warn',
         'react/forbid-prop-types': 'off',
-        'react/jsx-boolean-value': [
-            'error',
-            'never',
-        ],
-        'react/jsx-closing-bracket-location': [
-            'error',
-            'line-aligned',
-        ],
-        'react/jsx-curly-spacing': [
-            'error',
-            'never',
-        ],
-        'react/jsx-equals-spacing': [
-            'error',
-            'never',
-        ],
+        'react/jsx-boolean-value': ['error', 'never'],
+        'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
+        'react/jsx-curly-spacing': ['error', 'never'],
+        'react/jsx-equals-spacing': ['error', 'never'],
         'react/jsx-filename-extension': [
             'error',
             {
-                'extensions': [
-                    '.js',
-                    '.jsx',
-                    '.es',
-                    '.tsx',
-                ],
+                extensions: ['.js', '.jsx', '.es', '.tsx'],
             },
         ],
-        'react/jsx-first-prop-new-line': [
-            'error',
-            'multiline-multiprop',
-        ],
+        'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
         'react/jsx-handler-names': 'off',
-        'react/jsx-indent-props': [
-            'error',
-            4,
-        ],
-        'react/jsx-indent': [
-            'error',
-            4,
-        ],
+        'react/jsx-indent-props': ['error', 4],
+        'react/jsx-indent': ['error', 4],
         'react/jsx-key': 'error',
         'react/jsx-max-props-per-line': [
             'error',
             {
-                'when': 'multiline',
+                when: 'multiline',
             },
         ],
         'react/jsx-no-bind': [
             'warn',
             {
-                'ignoreRefs': true,
-                'allowArrowFunctions': false,
-                'allowBind': false,
+                ignoreRefs: true,
+                allowArrowFunctions: false,
+                allowBind: false,
             },
         ],
         'react/jsx-no-comment-textnodes': 'warn',
         'react/jsx-no-duplicate-props': [
             'error',
             {
-                'ignoreCase': true,
+                ignoreCase: true,
             },
         ],
         'react/jsx-no-literals': 'off',
@@ -80,16 +56,16 @@ module.exports = {
         'react/jsx-pascal-case': [
             'error',
             {
-                'allowAllCaps': true,
+                allowAllCaps: true,
             },
         ],
         'react/jsx-sort-props': 'off',
         'react/jsx-tag-spacing': [
             'error',
             {
-                'closingSlash': 'never',
-                'beforeSelfClosing': 'always',
-                'afterOpening': 'never',
+                closingSlash: 'never',
+                beforeSelfClosing: 'always',
+                afterOpening: 'never',
             },
         ],
         'react/jsx-uses-react': 'off',
@@ -97,10 +73,10 @@ module.exports = {
         'react/jsx-wrap-multilines': [
             'error',
             {
-                'declaration': true,
-                'assignment': true,
-                'return': true,
-                'arrow': true,
+                declaration: true,
+                assignment: true,
+                return: true,
+                arrow: true,
             },
         ],
         'react/no-array-index-key': 'error',
@@ -117,7 +93,7 @@ module.exports = {
         'react/no-multi-comp': [
             'error',
             {
-                'ignoreStateless': true,
+                ignoreStateless: true,
             },
         ],
         'react/no-render-return-value': 'error',
@@ -126,10 +102,7 @@ module.exports = {
         'react/no-unescaped-entities': 'error',
         'react/no-unknown-property': 'error',
         'react/no-unused-prop-types': 'off',
-        'react/prefer-es6-class': [
-            'error',
-            'always',
-        ],
+        'react/prefer-es6-class': ['error', 'always'],
         'react/prefer-stateless-function': 'error',
         'react/prop-types': 'off',
         'react/react-in-jsx-scope': 'off',
@@ -139,8 +112,8 @@ module.exports = {
         'react/self-closing-comp': [
             'error',
             {
-                'component': true,
-                'html': false,
+                component: true,
+                html: false,
             },
         ],
         'react/sort-prop-types': 'off',
@@ -167,7 +140,7 @@ module.exports = {
                         'mixins',
                         'statics',
                     ],
-                    'lifecycle': [
+                    lifecycle: [
                         'getDefaultProps',
                         'getInitialState',
                         'constructor',
