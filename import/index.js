@@ -1,7 +1,5 @@
 module.exports = {
-    plugins: [
-        'import',
-    ],
+    plugins: ['import'],
     rules: {
         'import/no-unresolved': 'error',
         'import/named': 'error',
@@ -36,14 +34,7 @@ module.exports = {
         'import/order': [
             'warn',
             {
-                groups: [
-                    'builtin',
-                    'external',
-                    'internal',
-                    'parent',
-                    'sibling',
-                    'index',
-                ],
+                groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
             },
         ],
         'import/newline-after-import': 'error',
@@ -52,4 +43,20 @@ module.exports = {
         'import/no-unassigned-import': 'off',
         'import/no-named-default': 'error',
     },
+    overrides: [
+        {
+            files: [
+                '**/config/**/*.js',
+                '**/mock/**/*.js',
+                '*.config.js',
+                'webpack-*.js',
+                'webpack.*.js',
+                '.*rc.js',
+            ],
+            rules: {
+                'import/unambiguous': 'off',
+                'import/no-commonjs': 'off',
+            },
+        },
+    ],
 };

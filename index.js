@@ -274,4 +274,13 @@ module.exports = {
         'max-statements-per-line': 'error',
         'no-useless-constructor': 'warn',
     },
+    overrides: [
+        {
+            files: ['**/*.test.js', '**/*.spec.js'],
+            env: {
+                es6: true,
+                jest: true,
+            },
+        },
+    ],
 };
