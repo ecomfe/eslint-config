@@ -15,11 +15,11 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@typescript-eslint/parser": "4.x",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/eslint-plugin": "^7.12.1",
     "@typescript-eslint/eslint-plugin": "4.x",
-    "babel-eslint": "10.x",
+    "@typescript-eslint/parser": "4.x",
     "eslint": "6.x || 7.x",
-    "eslint-plugin-babel": "5.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "4.x",
@@ -46,8 +46,8 @@
     }
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.8.1",
-    "eslint-plugin-babel": "^5.3.1"
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/eslint-plugin": "^7.12.1",
+    "eslint": "^7.8.1"
   }
 }

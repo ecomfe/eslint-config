@@ -4,7 +4,7 @@ module.exports = {
     parser: 'vue-eslint-parser',
     parserOptions: {
         ...parserOptions,
-        parser: 'babel-eslint',
+        parser: '@babel/eslint-parser',
     },
     plugins: ['vue'],
     overrides: [
@@ -142,7 +142,7 @@ module.exports = {
         'vue/no-reserved-component-names': 'error',
         'vue/no-restricted-syntax': base['no-restricted-syntax'] || 'off',
         'vue/no-unsupported-features': 'off',
-        'vue/object-curly-spacing': base['babel/object-curly-spacing'] || 'off',
+        'vue/object-curly-spacing': base['@babel/object-curly-spacing'] || 'off',
         'vue/require-direct-export': 'error',
         'vue/script-indent': [
             'error',

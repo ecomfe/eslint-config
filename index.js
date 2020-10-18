@@ -1,13 +1,14 @@
 module.exports = {
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
     parserOptions: {
         sourceType: 'module',
         ecmaFeatures: {
             jsx: true,
         },
+        requireConfigFile: false,
     },
     plugins: [
-        'babel',
+        '@babel',
     ],
     env: {
         browser: true,
@@ -30,7 +31,7 @@ module.exports = {
                 'after': true,
             },
         ],
-        'babel/new-cap': [
+        '@babel/new-cap': [
             'error',
             {
                 'capIsNewExceptions': [
@@ -43,7 +44,7 @@ module.exports = {
             'error',
             'never',
         ],
-        'babel/object-curly-spacing': [
+        '@babel/object-curly-spacing': [
             'error',
             'never',
         ],

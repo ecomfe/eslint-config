@@ -5,7 +5,7 @@ EFE 团队使用的 ESLint 配置。
 ## 安装
 
 ```shell
-npm i -D eslint babel-eslint eslint-plugin-babel @ecomfe/eslint-config
+npm i -D eslint @babel/eslint-parser @babel/eslint-plugin @ecomfe/eslint-config
 ```
 
 ## 使用
