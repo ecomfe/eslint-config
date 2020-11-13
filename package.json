@@ -7,7 +7,8 @@
   "scripts": {
     "deploy": "npm publish --access public",
     "lint": "eslint import react vue typescript *.js",
-    "prepublishOnly": "npm run lint"
+    "prepublishOnly": "npm run lint",
+    "release": "standard-version"
   },
   "author": "otakustay <otakustay@gmail.com> (https://github.com/otakustay)",
   "contributors": [
@@ -48,6 +49,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.12.1",
     "@babel/eslint-plugin": "^7.12.1",
-    "eslint": "^7.8.1"
+    "eslint": "^7.8.1",
+    "standard-version": "^9.0.0"
   }
 }
