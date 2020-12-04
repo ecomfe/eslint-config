@@ -37,6 +37,7 @@ module.exports = {
                 'capIsNewExceptions': [
                     'T',
                     'AddToFavoritesBar',
+                    'Vue',
                 ],
             },
         ],
@@ -183,6 +184,7 @@ module.exports = {
         'semi': [
             'error',
             'always',
+            {avoidEscape: true}
         ],
         'semi-spacing': 'error',
         'keyword-spacing': 'error',
