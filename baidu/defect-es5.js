@@ -1,4 +1,4 @@
-const defaults = require('./default');
+const defaults = require('./defect');
 const patch = require('./es5-patch');
 
 module.exports = {
