@@ -180,11 +180,11 @@ module.exports = {
         'quotes': [
             'error',
             'single',
+            {'avoidEscape': true},
         ],
         'semi': [
             'error',
             'always',
-            {avoidEscape: true}
         ],
         'semi-spacing': 'error',
         'keyword-spacing': 'error',
