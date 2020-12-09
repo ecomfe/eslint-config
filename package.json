@@ -6,7 +6,7 @@
   "repository": "ecomfe/eslint-config",
   "scripts": {
     "deploy": "npm publish --access public",
-    "lint": "eslint import react vue typescript *.js",
+    "lint": "eslint import react vue san typescript *.js",
     "prepublishOnly": "npm run lint",
     "release": "standard-version"
   },
@@ -24,6 +24,7 @@
     "eslint-plugin-import": "2.x",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "4.x",
+    "eslint-plugin-san": "0.x",
     "eslint-plugin-vue": "6.x"
   },
   "peerDependenciesMeta": {
@@ -34,6 +35,9 @@
       "optional": true
     },
     "eslint-plugin-react-hooks": {
+      "optional": true
+    },
+    "eslint-plugin-san": {
       "optional": true
     },
     "eslint-plugin-vue": {

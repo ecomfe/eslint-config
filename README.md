@@ -99,6 +99,27 @@ module.exports = {
 };
 ```
 
+### San
+
+如果需要检测 San 相关的代码，需要安装相关插件：
+
+```shell
+npm i -D eslint-plugin-san
+```
+
+并在 `.eslintrc.js` 中引用：
+
+```js
+module.exports = {
+    extends: [
+        '@ecomfe/eslint-config',
+        '@ecomfe/eslint-config/san', // 注意顺序
+        // 或者选择严格模式
+        // '@ecomfe/eslint-config/san/strict',
+    ],
+};
+```
+
 ### TypeScript
 
 如果需要检测 TypeScript 代码，需要安装相关插件：
