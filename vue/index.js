@@ -10,6 +10,7 @@ const v2Rules = {
 };
 
 const v3Rules = {
+    'vue/no-deprecated-data-object-declaration': 'error',
     'vue/no-deprecated-destroyed-lifecycle': 'error',
     'vue/no-deprecated-dollar-listeners-api': 'error',
     'vue/no-deprecated-dollar-scopedslots-api': 'error',

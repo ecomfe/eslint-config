@@ -2,7 +2,6 @@ const defaults = require('./index');
 const version = require('./version');
 
 const v3Rules = {
-    'vue/no-deprecated-data-object-declaration': 'warn',
     'vue/require-explicit-emits': 'error',
 };
 
