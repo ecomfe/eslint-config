@@ -6,23 +6,16 @@
  * @return {2|3|null} version of Vue (only 2 and 3 are currently supported)
  */
 function getVersion() {
-    let Vue = null;
-
     try {
         // eslint-disable-next-line global-require
-        Vue = require('vue');
-    } catch (e) {
+        const {version} = require('vue/package.json');
+        if (version.startsWith('2.')) {
+            return 2;
+        } else if (version.startsWith('3.')) {
+            return 3;
+        }
+    } catch (_) {
         // do nothing
-    }
-
-    if (!Vue || typeof Vue.version !== 'string') {
-        return null;
-    }
-
-    if (Vue.version.startsWith('2.')) {
-        return 2;
-    } else if (Vue.version.startsWith('3.')) {
-        return 3;
     }
 
     return null;
@@ -30,7 +23,7 @@ function getVersion() {
 
 let version = getVersion();
 if (!version) {
-    console.warn('[ecomfe/eslint-config] Vue version is not detected. Assuming Vue 2 is used.');
+    console.warn('[ecomfe/eslint-config] No valid Vue version is detected. Assuming Vue 2 is used.');
     version = 2;
 }
 
