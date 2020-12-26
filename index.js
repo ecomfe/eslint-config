@@ -53,7 +53,7 @@ module.exports = {
             'error',
             'as-needed',
         ],
-        'no-console': 'warn',
+        'no-console': ['warn', {allow: ['error', 'warn', 'info']}],
         'no-constant-condition': 'warn',
         'comma-dangle': [
             'error',
