@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0](https://github.com/ecomfe/eslint-config/compare/v6.2.1...v7.0.0) (2020-12-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* require `eslint-plugin-vue@7`
+
+### Features
+
+* update eslint-plugin-vue to v7, add support for new rules and Vue 3, update version declaration for peer deps ([885fe21](https://github.com/ecomfe/eslint-config/commit/885fe211168289c64181bfbd451bd1bf7081fcaa))
+
+
+### Bug Fixes
+
+* allow console.error, warn and info ([3e2cccc](https://github.com/ecomfe/eslint-config/commit/3e2cccc6603a189dded39c4b8a547df21064817d))
+* fix block-spacing for vue ([a7b4719](https://github.com/ecomfe/eslint-config/commit/a7b471935f78bd91a0503ac126eb088cc2379926))
+* fix vue/no-deprecated-data-object-declaration setting ([1e2a28a](https://github.com/ecomfe/eslint-config/commit/1e2a28a1262d7042b304a87c3bfc49a3d683c2dd))
+
 ### [6.2.1](https://github.com/ecomfe/eslint-config/compare/v6.2.0...v6.2.1) (2020-12-11)
 
 ## [6.2.0](https://github.com/ecomfe/eslint-config/compare/v6.1.0...v6.2.0) (2020-12-09)
