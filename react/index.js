@@ -65,6 +65,7 @@ module.exports = {
             {
                 closingSlash: 'never',
                 beforeSelfClosing: 'always',
+                beforeClosing: 'never',
                 afterOpening: 'never',
             },
         ],
