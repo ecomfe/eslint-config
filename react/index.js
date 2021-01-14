@@ -73,10 +73,10 @@ module.exports = {
         'react/jsx-wrap-multilines': [
             'error',
             {
-                declaration: true,
-                assignment: true,
-                return: true,
-                arrow: true,
+                declaration: 'parens',
+                assignment: 'parens',
+                return: 'parens',
+                arrow: 'parens',
             },
         ],
         'react/no-array-index-key': 'error',
