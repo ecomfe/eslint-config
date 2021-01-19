@@ -1,13 +1,11 @@
 module.exports = {
-    plugins: ['react', 'react-hooks'],
+    plugins: ['react'],
     settings: {
         react: {
             version: 'detect',
         },
     },
     rules: {
-        'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'warn',
         'react/default-props-match-prop-types': 'off',
         'react/display-name': 'off',
         'react/forbid-component-props': 'off',

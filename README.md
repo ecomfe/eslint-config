@@ -60,7 +60,7 @@ module.exports = {
 如果需要检测 React 相关的代码，需要安装相关插件：
 
 ```shell
-npm i -D eslint-plugin-react eslint-plugin-react-hooks
+npm i -D eslint-plugin-react
 ```
 
 并在 `.eslintrc.js` 中引用：
@@ -77,6 +77,24 @@ module.exports = {
 ```
 
 会自动检测本地 React 的版本，默认情况下无需其它配置。
+
+#### hook
+如果项目中有使用 hook, 需要安装相关插件
+
+```shell
+npm i -D eslint-plugin-react-hooks
+```
+
+```js
+module.exports = {
+    extends: [
+        '@ecomfe/eslint-config',
+        '@ecomfe/eslint-config/react/hook',
+        // 或者选择严格模式
+        // '@ecomfe/eslint-config/react/hook-strict',
+    ],
+};
+```
 
 ### Vue
 

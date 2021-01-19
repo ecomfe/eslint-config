@@ -4,7 +4,6 @@ module.exports = {
     ...defaults,
     rules: {
         ...defaults.rules,
-        'react-hooks/exhaustive-deps': 'error',
         'react/forbid-component-props': 'off',
         'react/jsx-handler-names': [
             'off',
