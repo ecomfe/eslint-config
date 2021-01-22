@@ -80,6 +80,8 @@ module.exports = {
                 arrow: 'parens',
             },
         ],
+        'react/jsx-closing-tag-location': 'error',
+        'react/jsx-props-no-multi-spaces': 'error',
         'react/no-array-index-key': 'error',
         'react/no-children-prop': 'error',
         'react/no-danger-with-children': 'error',
