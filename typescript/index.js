@@ -90,10 +90,10 @@ module.exports = {
                 '@typescript-eslint/type-annotation-spacing': 'error',
                 '@typescript-eslint/unbound-method': 'off',
                 '@typescript-eslint/unified-signatures': 'warn',
-                // TS自带这功能
-                'no-undef': 'off',
                 // 和TS的规则冲突
+                'no-undef': 'off',
                 'require-await': 'off',
+                'no-use-before-define': 'off',
             },
         },
     ],
