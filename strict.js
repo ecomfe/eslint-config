@@ -263,7 +263,21 @@ module.exports = {
         'space-in-parens': ['error', 'never'],
         'space-infix-ops': 'error',
         'space-unary-ops': 'warn',
-        'spaced-comment': ['error', 'always'],
+        'spaced-comment': [
+            'error',
+            'always',
+            {
+                'exceptions': [
+                    '-',
+                    '+',
+                    '\'',
+                    '#',
+                ],
+                'block': {
+                    'balanced': true,
+                },
+            },
+        ],
         'strict': 'off',
         'switch-colon-spacing': ['error', {before: false, after: true}],
         'symbol-description': 'warn',

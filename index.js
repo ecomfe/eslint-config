@@ -223,6 +223,7 @@ module.exports = {
                     '-',
                     '+',
                     '\'',
+                    '#',
                 ],
                 'block': {
                     'balanced': true,
