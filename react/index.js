@@ -41,6 +41,7 @@ module.exports = {
                 ignoreRefs: true,
                 allowArrowFunctions: false,
                 allowBind: false,
+                ignoreDOMComponents: true,
             },
         ],
         'react/jsx-no-comment-textnodes': 'warn',
