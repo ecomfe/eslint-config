@@ -77,6 +77,7 @@ module.exports = {
         'no-obj-calls': 'error',
         'no-sparse-arrays': 'error',
         'no-unreachable': 'error',
+        'no-unreachable-loop': 'error',
         'use-isnan': 'error',
         'valid-typeof': 'error',
         'curly': [
