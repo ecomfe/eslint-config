@@ -165,7 +165,7 @@ module.exports = {
             },
         ],
         'no-new-object': 'error',
-        'no-spaced-func': 'error',
+        'func-call-spacing': 'error',
         'no-trailing-spaces': 'error',
         'no-extra-parens': 'off',
         'no-mixed-spaces-and-tabs': 'error',
