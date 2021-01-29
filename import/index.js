@@ -25,10 +25,19 @@ module.exports = {
         'import/no-namespace': 'off',
         'import/extensions': [
             'error',
+            /**
+             * 根据分析, extension 的配置, 是没有前置 `.` 的
+             * 如:
+             *
+             * 'js': 'never' => correct
+             * '.js': 'never' => incorrect
+             *
+             * 参考 : https://github.com/benmosher/eslint-plugin-import/blob/9fa6bc9a05dfca906f6a485c92b15845c2490a32/src/rules/extensions.js#L157
+             */
             {
-                '.js': 'never',
-                '.jsx': 'never',
-                '.es': 'never',
+                'js': 'never',
+                'jsx': 'never',
+                'es': 'never',
             },
         ],
         'import/order': [
