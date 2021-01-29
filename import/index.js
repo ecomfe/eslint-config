@@ -27,7 +27,7 @@ module.exports = {
             'error',
             {
                 '.js': 'never',
-                '.jsx': 'never,',
+                '.jsx': 'never',
                 '.es': 'never',
             },
         ],
