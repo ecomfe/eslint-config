@@ -190,7 +190,6 @@ module.exports = {
         'no-sequences': 'error',
         'no-shadow': 'off',
         'no-shadow-restricted-names': 'off',
-        'no-spaced-func': 'error',
         'no-sparse-arrays': 'error',
         'no-sync': 'off',
         'no-tabs': 'warn',
