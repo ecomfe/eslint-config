@@ -246,7 +246,7 @@ module.exports = {
             4,
             {
                 'ignoreUrls': true,
-                'ignorePattern': 'data:image\/'
+                'ignorePattern': 'data:image/',
             },
         ],
         'max-params': [

@@ -265,7 +265,7 @@ module.exports = {
                 'anonymous': 'always',
                 'named': 'never',
                 'asyncArrow': 'always',
-            }
+            },
         ],
         'space-in-parens': ['error', 'never'],
         'space-infix-ops': 'error',
