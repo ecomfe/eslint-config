@@ -6,7 +6,7 @@ const {parserOptions} = require('../index');
  *
  * @returns {2|3|null} version of Vue (only 2 and 3 are currently supported)
  */
-function getVersion() {
+function getVersion(defaultValue) {
     try {
         // eslint-disable-next-line global-require
         const {version} = require('vue/package.json');
@@ -19,13 +19,12 @@ function getVersion() {
         // do nothing
     }
 
-    return null;
-}
+    if (defaultValue) {
+        console.warn(`[ecomfe/eslint-config] No valid Vue version is detected. Assuming Vue ${defaultValue} is used.`);
+        return defaultValue;
+    }
 
-let version = getVersion();
-if (!version) {
-    console.warn('[ecomfe/eslint-config] No valid Vue version is detected. Assuming Vue 2 is used.');
-    version = 2;
+    return null;
 }
 
 /**
@@ -268,7 +267,7 @@ const strictRules = {
  * @param {Object} base base JavaScript rules object
  * @returns {Object} the extended Vue rules object
  */
-function getRules(strict, base) {
+function getRules(strict, base = {}, version = getVersion(2)) {
     const config = strict ? strictRules : basicRules;
 
     return {
@@ -285,7 +284,7 @@ function getRules(strict, base) {
  * @returns {Object} the extended Vue config object
 
  */
-function getConfig(strict, base = {}) {
+function getConfig(strict, base = {}, version = getVersion(2)) {
     return {
         parser: 'vue-eslint-parser',
         parserOptions: {
@@ -301,11 +300,12 @@ function getConfig(strict, base = {}) {
                 },
             },
         ],
-        rules: getRules(strict, base),
+        rules: getRules(strict, base, version),
     };
 }
 
 module.exports = {
-    version,
+    getVersion,
+    getRules,
     getConfig,
 };
