@@ -262,6 +262,20 @@ const strictRules = {
 };
 
 /**
+ * Try to resolve parser for script blocks
+ * TypeScript > Babel
+ * @returns path for the resolved parser
+ */
+function getParser() {
+    try {
+        return require.resolve('@typescript-eslint/parser');
+    } catch (e) {
+        return require.resolve('@babel/eslint-parser');
+    }
+}
+
+
+/**
  *
  * @param {boolean} strict is strict mode
  * @param {Object} base base JavaScript rules object
@@ -289,7 +303,7 @@ function getConfig(strict, base = {}, version = getVersion(2)) {
         parser: 'vue-eslint-parser',
         parserOptions: {
             ...parserOptions,
-            parser: '@babel/eslint-parser',
+            parser: getParser(),
         },
         plugins: ['vue'],
         overrides: [
