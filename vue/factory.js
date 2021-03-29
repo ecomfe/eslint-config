@@ -206,7 +206,7 @@ const basicRules = {
         'vue/no-deprecated-slot-scope-attribute': 'off',
         'vue/no-reserved-component-names': 'error',
         'vue/no-unsupported-features': 'off',
-        'vue/require-direct-export': 'error',
+        'vue/require-direct-export': 'off',
         'vue/script-indent': [
             'error',
             4,
