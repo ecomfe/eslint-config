@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.1.0](https://github.com/ecomfe/eslint-config/compare/v7.0.0...v7.1.0) (2021-03-29)
+
+
+### Features
+
+* [max-len] ignore data uris ([8807dbe](https://github.com/ecomfe/eslint-config/commit/8807dbec9ea26b971e1a37830e7dbbc474948215))
+* disable `direct-export` rule as using `defineComponent` is actually recommended ([011c0e2](https://github.com/ecomfe/eslint-config/commit/011c0e2689fb55c74afe43f9a6da2a2f4f5720f5))
+* export helpers to get config for specific vue version ([#44](https://github.com/ecomfe/eslint-config/issues/44)) ([4813aaf](https://github.com/ecomfe/eslint-config/commit/4813aafd1d5dca9d5d72bbce5cf64721954678af))
+* implement baidu/vue which honors baidu/default as base js rules ([376fa36](https://github.com/ecomfe/eslint-config/commit/376fa36df0ad16313de07059e0d028873c055b4e))
+* ts检查中使用对ts更优的@typescript-eslint/no-duplicate-imports规则替换eslint no-duplicate-imports ([4ee4e50](https://github.com/ecomfe/eslint-config/commit/4ee4e50e3b91e458584a11008284cc0a62de921b))
+* 优化react bind检查，dom元素不再强制bing ([8c3e26f](https://github.com/ecomfe/eslint-config/commit/8c3e26f88e22794a47fde055fe05ceaeb28bf96a))
+* 升级react/jsx-wrap-multilines规则属性，严格模式下强制使用更严格parens-new-line写法, 强化检查 ([eec9665](https://github.com/ecomfe/eslint-config/commit/eec96655697debd40253f2815cb46f4e4e167968))
+* 增加'no-unreachable-loop'规则([#33](https://github.com/ecomfe/eslint-config/issues/33)) ([4ad455e](https://github.com/ecomfe/eslint-config/commit/4ad455eacc54976657b6fbf64a0cfa9c3b044412))
+* 增加no-extra-non-null-assertion规则 ([4991889](https://github.com/ecomfe/eslint-config/commit/4991889838d7284473d69d064cb1d4e4da7c786a))
+* 增加经过async修饰过的箭头函数前添加空格的强制要求 ([2285708](https://github.com/ecomfe/eslint-config/commit/22857086d14757923ecbd2d2d4cd337ef9c41027))
+* 更新react/jsx-tag-spacing rule, 增加beforeClosing规则 ([9c56efd](https://github.com/ecomfe/eslint-config/commit/9c56efd62d3fa4e9e51ca496dd3a46315fe2018c))
+* 补充ts检查中丢失的对于重复类成员的检查 ([7c5a5ec](https://github.com/ecomfe/eslint-config/commit/7c5a5ecca76472ce0c09e6c0a397bf39ff27c1cc))
+* **typescript/strict:** raise `no-floating-promises` to `error`; allow `void floatingPromise` in the form of `statement only pattern`; ([9a9fffb](https://github.com/ecomfe/eslint-config/commit/9a9fffb9ca58f09ec12dc1c485589ecc020b83a0))
+
+
+### Bug Fixes
+
+* make vue config work with typescript config ([c9a8cbd](https://github.com/ecomfe/eslint-config/commit/c9a8cbd4461da0079051fb3f3a58002fbbddac3e))
+* 修改no-use-before-define规则和@typescript-eslint/no-use-before-define的冲突问题([#35](https://github.com/ecomfe/eslint-config/issues/35)) ([10f4418](https://github.com/ecomfe/eslint-config/commit/10f44187c5ea44402abb49da6c6c3c224d1be73b))
+* **import/extensions:** 'never,' => 'never' [@typo](https://github.com/typo) ([0d80f8b](https://github.com/ecomfe/eslint-config/commit/0d80f8be259e5fe0b947ef51776b760826f76381))
+* **import/extensions:** 更正一个配置问题 ([fcce9d9](https://github.com/ecomfe/eslint-config/commit/fcce9d9239679071bc1d8e5d5e83b2247e982b25))
+* spaced-comment 增加新exception([#31](https://github.com/ecomfe/eslint-config/issues/31)) ([7c200c5](https://github.com/ecomfe/eslint-config/commit/7c200c5db75845e19819a07e76b2e6ae16e38581))
+* 添加react/jsx-props-no-multi-spaces和react/jsx-props-no-multi-spaces两条规则检查([#30](https://github.com/ecomfe/eslint-config/issues/30)) ([d34bd22](https://github.com/ecomfe/eslint-config/commit/d34bd22cd757b4eb3b05b13a1621a2664d79b71a))
+
 ## [7.0.0](https://github.com/ecomfe/eslint-config/compare/v6.2.1...v7.0.0) (2020-12-28)
 
 
@@ -16,7 +45,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* allow console.error, warn and info ([3e2cccc](https://github.com/ecomfe/eslint-config/commit/3e2cccc6603a189dded39c4b8a547df21064817d))
+* allow console.error, warn and info ([3e2cccc](https://github.com/ecomfe/eslint-config/commit/3e2cnpm publish ccc6603a189dded39c4b8a547df21064817d))
 * fix block-spacing for vue ([a7b4719](https://github.com/ecomfe/eslint-config/commit/a7b471935f78bd91a0503ac126eb088cc2379926))
 * fix vue/no-deprecated-data-object-declaration setting ([1e2a28a](https://github.com/ecomfe/eslint-config/commit/1e2a28a1262d7042b304a87c3bfc49a3d683c2dd))
 
