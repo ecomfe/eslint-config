@@ -99,6 +99,7 @@ module.exports = {
                 'no-use-before-define': 'off',
                 'no-dupe-class-members': 'off',
                 'no-duplicate-imports': 'off',
+                'no-useless-constructor': 'off',
             },
         },
     ],
