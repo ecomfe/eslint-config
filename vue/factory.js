@@ -179,7 +179,7 @@ const basicRules = {
         'vue/no-multi-spaces': 'error',
         'vue/no-spaces-around-equal-signs-in-attribute': 'error',
         'vue/prop-name-casing': 'error',
-        'vue/require-default-prop': 'error',
+        'vue/require-default-prop': 'off',
         'vue/require-prop-types': 'error',
         'vue/v-bind-style': 'warn',
         'vue/v-on-style': 'warn',
