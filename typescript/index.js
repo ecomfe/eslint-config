@@ -87,6 +87,9 @@ module.exports = {
                 '@typescript-eslint/promise-function-async': 'off',
                 '@typescript-eslint/require-array-sort-compare': 'off',
                 '@typescript-eslint/restrict-plus-operands': 'warn',
+                '@typescript-eslint/dot-notation': ['error', {
+                    allowIndexSignaturePropertyAccess: true
+                }],
                 semi: 'off',
                 '@typescript-eslint/semi': 'error',
                 '@typescript-eslint/strict-boolean-expressions': 'off',
@@ -102,6 +105,7 @@ module.exports = {
                 'no-duplicate-imports': 'off',
                 'no-useless-constructor': 'off',
                 'no-redeclare': 'off',
+                "dot-notation": "off",
             },
         },
     ],
