@@ -105,7 +105,7 @@ module.exports = {
                 'no-duplicate-imports': 'off',
                 'no-useless-constructor': 'off',
                 'no-redeclare': 'off',
-                "dot-notation": "off",
+                'dot-notation': 'off',
             },
         },
     ],
