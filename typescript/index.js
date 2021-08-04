@@ -70,6 +70,8 @@ module.exports = {
                     'error',
                     {vars: 'all', args: 'after-used', ignoreRestSiblings: true},
                 ],
+                'init-declarations': 'off',
+                '@typescript-eslint/init-declarations': ['error'],
                 '@typescript-eslint/no-use-before-define': 'error',
                 '@typescript-eslint/no-useless-constructor': 'error',
                 '@typescript-eslint/no-var-requires': 'error',
@@ -87,9 +89,7 @@ module.exports = {
                 '@typescript-eslint/promise-function-async': 'off',
                 '@typescript-eslint/require-array-sort-compare': 'off',
                 '@typescript-eslint/restrict-plus-operands': 'warn',
-                '@typescript-eslint/dot-notation': ['error', {
-                    allowIndexSignaturePropertyAccess: true
-                }],
+                '@typescript-eslint/dot-notation': ['error', {allowIndexSignaturePropertyAccess: true}],
                 semi: 'off',
                 '@typescript-eslint/semi': 'error',
                 '@typescript-eslint/strict-boolean-expressions': 'off',
