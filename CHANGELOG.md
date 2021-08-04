@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.2.0](https://github.com/ecomfe/eslint-config/compare/v7.1.0...v7.2.0) (2021-08-04)
+
+
+### Features
+
+* turn off `vue/require-default-prop` ([529ab0b](https://github.com/ecomfe/eslint-config/commit/529ab0b4b5e52fb0e5e9c7696b39c29f344c11c7))
+* 用TypeScript处理init-declarations ([dd33865](https://github.com/ecomfe/eslint-config/commit/dd33865225ff2bd8c22d29a24303ef96dc16e41e))
+
+
+### Bug Fixes
+
+* 允许命名函数表达式替代箭头函数 ([2fee3e4](https://github.com/ecomfe/eslint-config/commit/2fee3e45eeb3647cbc04d3f46ee92ac2624e80cb))
+* 去除no-useless-constructor规则，避免与@typescript-eslint/no-useless-constructor规则冲突 ([ed9875a](https://github.com/ecomfe/eslint-config/commit/ed9875aedcfa945fef4be5c0f061c36bc1ca71c7)), closes [#56](https://github.com/ecomfe/eslint-config/issues/56)
+* 禁用dot-notation规则，使用@typescript-eslint/dot-notation规则代替，兼容typescript noPropertyAccessFromIndexSignature配置 ([c30434f](https://github.com/ecomfe/eslint-config/commit/c30434fcd19fe8e07d71904d16acab988bb34b7f)), closes [#56](https://github.com/ecomfe/eslint-config/issues/56)
+* 禁用no-redeclare,启用@typescript-eslint/no-redeclare，屏蔽ts下针对重复定义的错误判断 ([a472576](https://github.com/ecomfe/eslint-config/commit/a472576933cc013b5a97a3f58e6f6d1a5b9abba1)), closes [#56](https://github.com/ecomfe/eslint-config/issues/56)
+
 ## [7.1.0](https://github.com/ecomfe/eslint-config/compare/v7.0.0...v7.1.0) (2021-03-29)
 
 
