@@ -236,7 +236,7 @@ module.exports = {
         'operator-linebreak': ['error', 'before'],
         'padded-blocks': 'off',
         'padding-line-between-statements': 'off',
-        'prefer-arrow-callback': 'warn',
+        'prefer-arrow-callback': ['warn', {allowNamedFunctions: true}],
         'prefer-const': 'error',
         'prefer-destructuring': 'off',
         'prefer-numeric-literals': 'error',
@@ -265,7 +265,7 @@ module.exports = {
                 'anonymous': 'always',
                 'named': 'never',
                 'asyncArrow': 'always',
-            }
+            },
         ],
         'space-in-parens': ['error', 'never'],
         'space-infix-ops': 'error',
