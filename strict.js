@@ -119,7 +119,18 @@ module.exports = {
         'no-else-return': 'off',
         'no-empty': 'error',
         'no-empty-character-class': 'error',
-        'no-empty-function': 'error',
+        'no-empty-function': [
+            'error',
+            {
+                allow: [
+                    'generatorFunctions',
+                    'methods',
+                    'generatorMethods',
+                    'setters',
+                    'asyncMethods',
+                ],
+            },
+        ],
         'no-empty-pattern': 'error',
         'no-eq-null': 'off',
         'no-eval': 'error',

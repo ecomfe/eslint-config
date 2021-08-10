@@ -45,7 +45,8 @@ module.exports = {
                 '@typescript-eslint/member-ordering': 'warn',
                 '@typescript-eslint/no-array-constructor': 'error',
                 'no-empty-function': 'off',
-                '@typescript-eslint/no-empty-function': 'error',
+                // TS有类型检测，不会把空对象和空函数写错，所以关掉这个规则
+                '@typescript-eslint/no-empty-function': 'off',
                 '@typescript-eslint/no-empty-interface': 'warn',
                 '@typescript-eslint/no-explicit-any': 'off',
                 'no-extra-parens': 'off',
