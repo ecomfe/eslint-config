@@ -75,10 +75,10 @@ module.exports = {
         'react/jsx-wrap-multilines': [
             'error',
             {
-                declaration: 'parens',
-                assignment: 'parens',
-                return: 'parens',
-                arrow: 'parens',
+                declaration: 'parens-new-line',
+                assignment: 'parens-new-line',
+                return: 'parens-new-line',
+                arrow: 'parens-new-line',
             },
         ],
         'react/jsx-closing-tag-location': 'error',
