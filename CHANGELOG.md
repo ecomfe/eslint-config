@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.2.1](https://github.com/ecomfe/eslint-config/compare/v7.2.0...v7.2.1) (2021-08-10)
+
+
+### Bug Fixes
+
+* 在TS下关闭no-empty-function规则 ([fa1e4fd](https://github.com/ecomfe/eslint-config/commit/fa1e4fd3c958771f79458d1528f64f9e8b029b1f))
+* 清理一些和默认规则重复的strict规则 ([5a361f9](https://github.com/ecomfe/eslint-config/commit/5a361f913f4c80d111524b4b0c9cf81047ab0d1a))
+
 ## [7.2.0](https://github.com/ecomfe/eslint-config/compare/v7.1.0...v7.2.0) (2021-08-04)
 
 
