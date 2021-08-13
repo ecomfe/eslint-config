@@ -46,6 +46,7 @@ module.exports = {
                  * @note: This is related to the rule above.
                  */
                 'no-void': ['error', {'allowAsStatement': true}],
+                '@typescript-eslint/quotes': ['error', 'single'],
             },
         },
     ],
