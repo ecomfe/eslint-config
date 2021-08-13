@@ -98,6 +98,12 @@ module.exports = {
                 '@typescript-eslint/type-annotation-spacing': 'error',
                 '@typescript-eslint/unbound-method': 'off',
                 '@typescript-eslint/unified-signatures': 'warn',
+                '@typescript-eslint/quotes': [
+                    'error',
+                    'single',
+                    {'avoidEscape': true},
+                ],
+                'quotes': 'off',
                 // 和TS的规则冲突
                 'no-undef': 'off',
                 'require-await': 'off',
