@@ -26,8 +26,6 @@ module.exports = {
         'san/no-multiple-template-root': 'error',
         'san/no-parsing-error': 'error',
         'san/no-reserved-keys': 'error',
-        'san/no-shared-component-data': 'error',
-        'san/no-template-key': 'error',
         'san/no-textarea-mustache': 'error',
         'san/no-unused-components': 'error',
         'san/no-unused-vars': 'error',
@@ -39,8 +37,10 @@ module.exports = {
         'san/valid-s-for': 'error',
         'san/valid-s-if': 'error',
         'san/valid-s-show': 'error',
+        'san/valid-components-name': 'error',
         // strongly-recommended
         'san/attribute-hyphenation': 'warn',
+        'san/boolean-value': ['warn', 'never'],
         'san/html-closing-bracket-newline': 'warn',
         'san/html-closing-bracket-spacing': [
             'warn', {
@@ -95,6 +95,7 @@ module.exports = {
                 ],
             },
         ],
+        'san/no-expression-in-template-literals': 'warn',
         'san/no-lone-template': 'warn',
         'san/this-in-template': 'warn',
     },
