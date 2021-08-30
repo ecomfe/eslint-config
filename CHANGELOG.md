@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.3.0](https://github.com/ecomfe/eslint-config/compare/v7.2.1...v7.3.0) (2021-08-30)
+
+
+### Features
+
+* update san config and dependence ([f63f438](https://github.com/ecomfe/eslint-config/commit/f63f43887177f2bbef72100949b13ecc6ede0d30))
+
+
+### Bug Fixes
+
+* Typescript下禁用eslint quotes规则，使用@typescript-eslint/quotes替代 ([c4739fc](https://github.com/ecomfe/eslint-config/commit/c4739fc57b227213a0058f6c0b339e3a404796a5))
+
 ### [7.2.1](https://github.com/ecomfe/eslint-config/compare/v7.2.0...v7.2.1) (2021-08-10)
 
 
