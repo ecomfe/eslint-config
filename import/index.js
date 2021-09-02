@@ -67,5 +67,13 @@ module.exports = {
                 'import/no-commonjs': 'off',
             },
         },
+        {
+            files: [
+                '**/*.d.ts',
+            ],
+            rules: {
+                'import/unambiguous': 'off',
+            },
+        },
     ],
 };
