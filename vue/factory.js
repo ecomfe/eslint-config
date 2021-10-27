@@ -1,26 +1,62 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console, global-require */
+const path = require('path');
+const {major, minVersion} = require('semver');
 const {parserOptions} = require('../index');
 
 /**
  * Detect the version of Vue
  *
+ * @returns {string|null} version range of Vue
+ */
+function getVersionRange() {
+    try {
+        // fallback to checking local package.json
+        const {
+            dependencies = {},
+            peerDependencies = {},
+            devDependencies = {},
+        } = require(path.join(process.cwd(), 'package.json'));
+
+        return (
+            dependencies.vue || peerDependencies.vue || devDependencies.vue || null
+        );
+    } catch (_) {
+        // nothing can be done
+    }
+
+    return null;
+}
+
+/**
+ * Detect the version of Vue
+ *
+ * @param {2|3=} defaultValue the fallback version if cannot find the version
  * @returns {2|3|null} version of Vue (only 2 and 3 are currently supported)
  */
 function getVersion(defaultValue) {
     try {
-        // eslint-disable-next-line global-require
         const {version} = require('vue/package.json');
-        if (version.startsWith('2.')) {
-            return 2;
-        } else if (version.startsWith('3.')) {
-            return 3;
+        const v = major(version);
+
+        if (v === 2 || v === 3) {
+            return v;
         }
     } catch (_) {
-        // do nothing
+        const range = getVersionRange();
+
+        if (range) {
+            const v = major(minVersion(range));
+
+            if (v === 2 || v === 3) {
+                return v;
+            }
+        }
     }
 
     if (defaultValue) {
-        console.warn(`[ecomfe/eslint-config] No valid Vue version is detected. Assuming Vue ${defaultValue} is used.`);
+        console.warn(
+            `[ecomfe/eslint-config] No valid Vue version is detected. Assuming Vue ${defaultValue} is used.`
+        );
         return defaultValue;
     }
 
@@ -91,6 +127,13 @@ const basicRules = {
         'vue/require-toggle-inside-transition': 'error',
         'vue/return-in-emits-validator': 'error',
         'vue/valid-v-is': 'error',
+        'vue/v-on-event-hyphenation': 'error',
+        'vue/no-deprecated-v-is': 'error',
+        'vue/script-setup-uses-vars': 'error',
+        'vue/no-export-in-script-setup': 'error',
+        'vue/valid-define-props': 'error',
+        'vue/valid-define-emits': 'error',
+        'vue/no-deprecated-router-link-tag-prop': 'error',
     },
     common: {
         'vue/comment-directive': 'error',
@@ -206,7 +249,7 @@ const basicRules = {
         'vue/no-deprecated-slot-scope-attribute': 'off',
         'vue/no-reserved-component-names': 'error',
         'vue/no-unsupported-features': 'off',
-        'vue/require-direct-export': 'off',
+        'vue/require-direct-export': 'error',
         'vue/script-indent': [
             'error',
             4,
@@ -214,6 +257,14 @@ const basicRules = {
                 switchCase: 1,
             },
         ],
+        'vue/valid-next-tick': 'error',
+        'vue/html-button-has-type': 'error',
+        'vue/no-invalid-model-keys': 'error',
+        'vue/no-unused-refs': 'error',
+        'vue/no-this-in-before-route-enter': 'error',
+        'vue/no-use-computed-property-like-method': 'error',
+        'vue/no-useless-template-attributes': 'error',
+        'vue/no-computed-properties-in-data': 'error',
     },
 };
 
@@ -224,6 +275,7 @@ const strictRules = {
     v3: {
         ...basicRules.v3,
         'vue/require-explicit-emits': 'error',
+        'vue/require-emit-validator': 'error',
     },
     common: {
         ...basicRules.common,
@@ -258,6 +310,7 @@ const strictRules = {
         'vue/v-on-function-call': 'error',
         'vue/no-lone-template': 'error',
         'vue/no-multiple-slot-args': 'error',
+        'vue/no-v-text': 'error',
     },
 };
 
@@ -274,17 +327,28 @@ function getParser() {
     }
 }
 
-
 /**
  *
  * @param {boolean} strict is strict mode
  * @param {Object} base base JavaScript rules object
+ * @param {2|3=} version the fallback version if cannot find the version
  * @returns {Object} the extended Vue rules object
  */
 function getRules(strict, base = {}, version = getVersion(2)) {
     const config = strict ? strictRules : basicRules;
+    const range = getVersionRange();
 
     return {
+        ...(range
+            ? {
+                'vue/no-unsupported-features': [
+                    'error',
+                    {
+                        version: range,
+                    },
+                ],
+            }
+            : {}),
         ...config.common,
         ...config[`v${version}`],
         ...getExtendedRules(base),
@@ -295,6 +359,7 @@ function getRules(strict, base = {}, version = getVersion(2)) {
  *
  * @param {boolean} strict is strict mode
  * @param {Object} base base JavaScript rules object
+ * @param {2|3=} version the fallback version if cannot find the version
  * @returns {Object} the extended Vue config object
 
  */
