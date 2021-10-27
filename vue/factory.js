@@ -1,5 +1,6 @@
 /* eslint-disable no-console, global-require */
 const path = require('path');
+const fs = require('fs');
 const {major, minVersion} = require('semver');
 const {parserOptions} = require('../index');
 
@@ -15,7 +16,9 @@ function getVersionRange() {
             dependencies = {},
             peerDependencies = {},
             devDependencies = {},
-        } = require(path.join(process.cwd(), 'package.json'));
+        } = JSON.parse(
+            fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8')
+        );
 
         return (
             dependencies.vue || peerDependencies.vue || devDependencies.vue || null
