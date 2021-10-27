@@ -26,7 +26,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-san": "^1.0.0",
-    "eslint-plugin-vue": "^7.3.0"
+    "eslint-plugin-vue": "^7.20.0"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-import": {
@@ -57,5 +57,8 @@
     "@babel/eslint-plugin": "^7.12.1",
     "eslint": "^7.8.1",
     "standard-version": "^9.3.0"
+  },
+  "dependencies": {
+    "semver": "^7.3.5"
   }
 }
