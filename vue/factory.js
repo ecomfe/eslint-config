@@ -319,13 +319,13 @@ const strictRules = {
 
 /**
  * Try to resolve parser for script blocks
- * TypeScript > Babel
  * @returns path for the resolved parser
  */
 function getParser() {
-    try {
+    const isTypescriptRepo = fs.existsSync(path.join(process.cwd(), 'tsconfig.json'));
+    if(isTypescriptRepo){
         return require.resolve('@typescript-eslint/parser');
-    } catch (e) {
+    }else{
         return require.resolve('@babel/eslint-parser');
     }
 }
