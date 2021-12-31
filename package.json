@@ -19,9 +19,9 @@
     "@babel/core": "^7.12.10",
     "@babel/eslint-parser": "^7.12.1",
     "@babel/eslint-plugin": "^7.12.1",
-    "@typescript-eslint/eslint-plugin": "^4.11.0",
-    "@typescript-eslint/parser": "^4.11.0",
-    "eslint": "^6.2.0 || 7.x",
+    "@typescript-eslint/eslint-plugin": "^4.11.0 || 5.x",
+    "@typescript-eslint/parser": "^4.11.0 || 5.x",
+    "eslint": "^6.2.0 || 7.x || 8.x",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
@@ -52,11 +52,11 @@
     }
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/eslint-parser": "^7.12.1",
-    "@babel/eslint-plugin": "^7.12.1",
-    "eslint": "^7.8.1",
-    "standard-version": "^9.3.0"
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/eslint-plugin": "^7.16.5",
+    "eslint": "^8.5.0",
+    "standard-version": "^9.3.2"
   },
   "dependencies": {
     "semver": "^7.3.5"
