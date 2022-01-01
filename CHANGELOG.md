@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.4.0](https://github.com/ecomfe/eslint-config/compare/v7.3.0...v7.4.0) (2022-01-01)
+
+
+### Features
+
+* support eslint 8 ([a6c07f4](https://github.com/ecomfe/eslint-config/commit/a6c07f4e8f0ee5ada8e4261d43f612201600c82e))
+* update eslint-plugin-vue, add more rules and try resolving version from local package.json ([105dbfb](https://github.com/ecomfe/eslint-config/commit/105dbfb57fbee4a556031382a9b1779b03758adb))
+
 ## [7.3.0](https://github.com/ecomfe/eslint-config/compare/v7.2.1...v7.3.0) (2021-08-30)
 
 
