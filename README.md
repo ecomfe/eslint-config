@@ -83,7 +83,7 @@ module.exports = {
 如果需要检测 Vue 相关的代码，需要安装相关插件：
 
 ```shell
-npm i -D eslint-plugin-vue
+npm i -D eslint-plugin-vue@7
 ```
 
 并在 `.eslintrc.js` 中引用：
