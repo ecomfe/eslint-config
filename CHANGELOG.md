@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.5.1](https://github.com/ecomfe/eslint-config/compare/v7.5.0...v7.5.1) (2023-07-17)
+
+
+### Bug Fixes
+
+* 兼容新版typescript eslint删除no-duplicate-imports规则 ([d9910a0](https://github.com/ecomfe/eslint-config/commit/d9910a0310f0288b19d90a1e4368c8cd95ec2962))
+
 ## [7.5.0](https://github.com/ecomfe/eslint-config/compare/v7.4.0...v7.5.0) (2023-07-17)
 
 
