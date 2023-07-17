@@ -77,7 +77,6 @@ module.exports = {
                 '@typescript-eslint/no-useless-constructor': 'error',
                 '@typescript-eslint/no-var-requires': 'error',
                 '@typescript-eslint/no-dupe-class-members': 'error',
-                '@typescript-eslint/no-duplicate-imports': 'error',
                 '@typescript-eslint/no-extra-non-null-assertion': 'error',
                 '@typescript-eslint/no-redeclare': 'error',
                 '@typescript-eslint/prefer-for-of': 'error',
