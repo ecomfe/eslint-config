@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.5.0](https://github.com/ecomfe/eslint-config/compare/v7.4.0...v7.5.0) (2023-07-17)
+
+
+### Features
+
+* 兼容typescript-eslint 6.x版本 ([dbcc5f1](https://github.com/ecomfe/eslint-config/commit/dbcc5f11be703ae1108371965ecb4bc1211f92f6))
+
 ## [7.4.0](https://github.com/ecomfe/eslint-config/compare/v7.3.0...v7.4.0) (2022-01-01)
 
 
