@@ -1,7 +1,7 @@
 /* eslint-disable no-console, global-require */
 const path = require('path');
 const fs = require('fs');
-const {major, minVersion} = require('semver');
+const {major, minor, minVersion} = require('semver');
 const {parserOptions} = require('../index');
 
 /**
@@ -31,28 +31,44 @@ function getVersionRange() {
 }
 
 /**
- * Detect the version of Vue
+ * Calculate Vue version from semver range
  *
- * @param {2|3=} defaultValue the fallback version if cannot find the version
- * @returns {2|3|null} version of Vue (only 2 and 3 are currently supported)
+ * @param {string} range version range of Vue
+ * @returns {2|2.7|3|null} version of Vue
+ */
+function detectVersion(range) {
+    const majorVersion = major(range);
+    const minorVersion = minor(range);
+
+    if (majorVersion === 2 && minorVersion === 7) {
+        return 2.7;
+    }
+
+    if (majorVersion === 2 || majorVersion === 3) {
+        return majorVersion;
+    }
+
+    return null;
+}
+
+/**
+ * Detect the version of Vue from dependencies
+ *
+ * @param {2|2.7|3=} defaultValue the fallback version if cannot find the version
+ * @returns {2|2.7|3|null} version of Vue (only 2, 2.7 and 3 are currently supported)
  */
 function getVersion(defaultValue) {
     try {
         const {version} = require('vue/package.json');
-        const v = major(version);
 
-        if (v === 2 || v === 3) {
-            return v;
-        }
+        return detectVersion(version);
     } catch (_) {
         const range = getVersionRange();
 
         if (range) {
-            const v = major(minVersion(range));
+            const min = minVersion(range);
 
-            if (v === 2 || v === 3) {
-                return v;
-            }
+            return detectVersion(min);
         }
     }
 
@@ -66,6 +82,31 @@ function getVersion(defaultValue) {
     return null;
 }
 
+const EXTENDED_RULES = [
+    'array-bracket-spacing',
+    'arrow-spacing',
+    'block-spacing',
+    'brace-style',
+    'camelcase',
+    'comma-dangle',
+    'dot-location',
+    'eqeqeq',
+    'key-spacing',
+    'keyword-spacing',
+    'max-len',
+    'no-empty-pattern',
+    'no-irregular-whitespace',
+    'no-restricted-syntax',
+    '@babel/object-curly-spacing',
+    'space-infix-ops',
+    'space-unary-ops',
+    'no-loss-of-precision',
+    'object-shorthand',
+    'quote-props',
+    'array-element-newline',
+    'no-console',
+];
+
 /**
  * Get derived rules from a given base JavaScript rules object
  *
@@ -74,25 +115,15 @@ function getVersion(defaultValue) {
  */
 // eslint-disable-next-line complexity
 function getExtendedRules(base) {
-    return {
-        'vue/array-bracket-spacing': base['array-bracket-spacing'] || 'off',
-        'vue/arrow-spacing': base['arrow-spacing'] || 'off',
-        'vue/block-spacing': base['block-spacing'] || 'off',
-        'vue/brace-style': base['brace-style'] || 'off',
-        'vue/camelcase': base.camelcase || 'off',
-        'vue/comma-dangle': base['comma-dangle'] || 'off',
-        'vue/dot-location': base['dot-location'] || 'off',
-        'vue/eqeqeq': base.eqeqeq || 'off',
-        'vue/key-spacing': base['key-spacing'] || 'off',
-        'vue/keyword-spacing': base['keyword-spacing'] || 'off',
-        'vue/max-len': base['max-len'] || 'off',
-        'vue/no-empty-pattern': base['no-empty-pattern'] || 'off',
-        'vue/no-irregular-whitespace': base['no-irregular-whitespace'] || 'off',
-        'vue/no-restricted-syntax': base['no-restricted-syntax'] || 'off',
-        'vue/object-curly-spacing': base['@babel/object-curly-spacing'] || 'off',
-        'vue/space-infix-ops': base['space-infix-ops'] || 'off',
-        'vue/space-unary-ops': base['space-unary-ops'] || 'off',
-    };
+    return EXTENDED_RULES.reduce((rules, name) => {
+        const ext = name.indexOf('/') === -1 ? `vue/${name}` : `vue/${name.split('/')[1]}`;
+        const value = base[name] || 'off';
+
+        // eslint-disable-next-line no-param-reassign
+        rules[ext] = value;
+
+        return rules;
+    }, {});
 }
 
 const basicRules = {
@@ -102,6 +133,23 @@ const basicRules = {
         'vue/no-v-for-template-key': 'error',
         'vue/no-v-model-argument': 'error',
         'vue/valid-v-bind-sync': 'error',
+    },
+    'v2.7': {
+        'vue/no-custom-modifiers-on-v-model': 'error',
+        'vue/no-multiple-template-root': 'error',
+        'vue/no-v-for-template-key': 'error',
+        'vue/no-v-model-argument': 'error',
+        'vue/valid-v-bind-sync': 'error',
+        'vue/no-export-in-script-setup': 'error',
+        'vue/return-in-emits-validator': 'error',
+        'vue/valid-define-props': 'error',
+        'vue/valid-define-emits': 'error',
+        'vue/valid-define-options': 'error',
+        'vue/no-setup-props-reactivity-loss': 'error',
+        'vue/no-ref-object-reactivity-loss': 'error',
+        'vue/define-emits-declaration': 'error',
+        'vue/define-props-declaration': 'error',
+        'vue/no-required-prop-with-default': 'error',
     },
     v3: {
         'vue/no-deprecated-data-object-declaration': 'error',
@@ -123,7 +171,7 @@ const basicRules = {
         'vue/no-deprecated-vue-config-keycodes': 'error',
         'vue/no-lifecycle-after-await': 'error',
         'vue/no-ref-as-operand': 'error',
-        'vue/no-setup-props-destructure': 'error',
+        'vue/no-setup-props-reactivity-loss': 'error',
         'vue/no-v-for-template-key-on-child': 'error',
         'vue/no-watch-after-await': 'error',
         'vue/require-slots-as-functions': 'error',
@@ -132,11 +180,17 @@ const basicRules = {
         'vue/valid-v-is': 'error',
         'vue/v-on-event-hyphenation': 'error',
         'vue/no-deprecated-v-is': 'error',
-        'vue/script-setup-uses-vars': 'error',
         'vue/no-export-in-script-setup': 'error',
         'vue/valid-define-props': 'error',
         'vue/valid-define-emits': 'error',
+        'vue/valid-define-options': 'error',
         'vue/no-deprecated-router-link-tag-prop': 'error',
+        'vue/no-expose-after-await': 'error',
+        'vue/no-ref-object-reactivity-loss': 'error',
+        'vue/define-emits-declaration': 'error',
+        'vue/define-props-declaration': 'error',
+        'vue/no-required-prop-with-default': 'error',
+        'vue/no-deprecated-model-definition': 'error',
     },
     common: {
         'vue/comment-directive': 'error',
@@ -215,12 +269,10 @@ const basicRules = {
             'error',
             {
                 singleline: 2,
-                multiline: {
-                    max: 2,
-                    allowFirstLine: false,
-                },
+                multiline: 2,
             },
         ],
+        'vue/first-attribute-linebreak': 'error',
         'vue/mustache-interpolation-spacing': 'error',
         'vue/no-multi-spaces': 'error',
         'vue/no-spaces-around-equal-signs-in-attribute': 'error',
@@ -241,17 +293,10 @@ const basicRules = {
                 ignores: [],
             },
         ],
-        'vue/component-tags-order': [
-            'warn',
-            {
-                order: ['template', 'script', 'style'],
-            },
-        ],
         'vue/no-deprecated-scope-attribute': 'off',
         'vue/no-deprecated-slot-attribute': 'off',
         'vue/no-deprecated-slot-scope-attribute': 'off',
         'vue/no-reserved-component-names': 'error',
-        'vue/no-unsupported-features': 'off',
         'vue/require-direct-export': 'error',
         'vue/script-indent': [
             'error',
@@ -268,6 +313,14 @@ const basicRules = {
         'vue/no-use-computed-property-like-method': 'error',
         'vue/no-useless-template-attributes': 'error',
         'vue/no-computed-properties-in-data': 'error',
+        'vue/no-reserved-props': ['error', {
+            vueVersion: getVersion(2) < 3 ? 2 : 3,
+        }],
+        'vue/no-child-content': 'error',
+        'vue/no-v-text-v-html-on-component': 'error',
+        'vue/prefer-import-from-vue': 'error',
+        'vue/valid-attribute-name': 'error',
+        'vue/no-use-v-else-with-v-for': 'error',
     },
 };
 
@@ -275,10 +328,15 @@ const strictRules = {
     v2: {
         ...basicRules.v2,
     },
+    'v2.7': {
+        ...basicRules['v2.7'],
+        'vue/define-macros-order': 'error',
+    },
     v3: {
         ...basicRules.v3,
         'vue/require-explicit-emits': 'error',
         'vue/require-emit-validator': 'error',
+        'vue/define-macros-order': 'error',
     },
     common: {
         ...basicRules.common,
@@ -314,6 +372,10 @@ const strictRules = {
         'vue/no-lone-template': 'error',
         'vue/no-multiple-slot-args': 'error',
         'vue/no-v-text': 'error',
+        'vue/prefer-true-attribute-shorthand': 'error',
+        'vue/prefer-prop-type-boolean-first': 'error',
+        'vue/require-typed-ref': 'error',
+        'vue/require-typed-object-prop': 'error',
     },
 };
 
@@ -324,17 +386,27 @@ const strictRules = {
  */
 function getParser() {
     try {
-        return require.resolve('@typescript-eslint/parser');
+        const ts = require('typescript');
+        const hasTsConfig = !!ts.findConfigFile(
+            process.cwd(),
+            ts.sys.fileExists,
+            'tsconfig.json'
+        );
+
+        if (hasTsConfig) {
+            return require.resolve('@typescript-eslint/parser');
+        }
     } catch (e) {
-        return require.resolve('@babel/eslint-parser');
+        // do nothing and fallback to @babel/eslint-parser later
     }
+    return require.resolve('@babel/eslint-parser');
 }
 
 /**
  *
  * @param {boolean} strict is strict mode
  * @param {Object} base base JavaScript rules object
- * @param {2|3=} version the fallback version if cannot find the version
+ * @param {2|2.7|3=} version the fallback version if cannot find the version
  * @returns {Object} the extended Vue rules object
  */
 function getRules(strict, base = {}, version = getVersion(2)) {
