@@ -307,7 +307,7 @@ const basicRules = {
         ],
         'vue/valid-next-tick': 'error',
         'vue/html-button-has-type': 'error',
-        'vue/no-invalid-model-keys': 'error',
+        'vue/valid-model-definition': 'error',
         'vue/no-unused-refs': 'error',
         'vue/no-this-in-before-route-enter': 'error',
         'vue/no-use-computed-property-like-method': 'error',
