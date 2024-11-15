@@ -1,6 +1,20 @@
+# Dependency
 node_modules
-*.tgz
+.yarn
+
+# System
 .DS_Store
 
-# For IDEA
-/.idea/
+# Log
+/*.log
+
+# IDE
+/.idea
+
+# Build
+*.tgz
+dist
+
+# Env
+.env
+.env.*.local

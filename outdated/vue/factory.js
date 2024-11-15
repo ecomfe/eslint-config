@@ -23,7 +23,8 @@ function getVersionRange() {
         return (
             dependencies.vue || peerDependencies.vue || devDependencies.vue || null
         );
-    } catch (_) {
+    }
+    catch (_) {
         // nothing can be done
     }
 
@@ -62,7 +63,8 @@ function getVersion(defaultValue) {
         const {version} = require('vue/package.json');
 
         return detectVersion(version);
-    } catch (_) {
+    }
+    catch (_) {
         const range = getVersionRange();
 
         if (range) {
@@ -396,14 +398,14 @@ function getParser() {
         if (hasTsConfig) {
             return require.resolve('@typescript-eslint/parser');
         }
-    } catch (e) {
+    }
+    catch (e) {
         // do nothing and fallback to @babel/eslint-parser later
     }
     return require.resolve('@babel/eslint-parser');
 }
 
 /**
- *
  * @param {boolean} strict is strict mode
  * @param {Object} base base JavaScript rules object
  * @param {2|2.7|3=} version the fallback version if cannot find the version
@@ -431,12 +433,10 @@ function getRules(strict, base = {}, version = getVersion(2)) {
 }
 
 /**
- *
  * @param {boolean} strict is strict mode
  * @param {Object} base base JavaScript rules object
  * @param {2|3=} version the fallback version if cannot find the version
  * @returns {Object} the extended Vue config object
-
  */
 function getConfig(strict, base = {}, version = getVersion(2)) {
     return {

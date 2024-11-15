@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "dist": false
+  },
+  "search.exclude": {
+    "dist": true
+  },
+  "typescript.tsc.autoDetect": "off",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.defaultFormatter": "dprint.dprint",
+  "eslint.useFlatConfig": true
+}
