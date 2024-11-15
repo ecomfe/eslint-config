@@ -5,146 +5,35 @@ EFE 团队使用的 ESLint 配置。
 ## 安装
 
 ```shell
-npm i -D eslint @babel/eslint-parser @babel/eslint-plugin @ecomfe/eslint-config
+npm i -D eslint @ecomfe/eslint-config
 ```
 
 ## 使用
 
-在 `.eslintrc.js` 中使用：
+**仅支持Flat Config格式的配置。**
+
+在 `eslint.config.js` 中使用：
 
 ```js
-module.exports = {
-    extends: [
-        '@ecomfe/eslint-config',
-    ],
+import {configure, Options} from './dist/index.js';
+
+const options = {
+    strict: true,
+    typeScript: {typeCheck: true},
+    import: {},
+    react: {},
 };
+export default configure(options);
 ```
 
-也可开启严格模式：
+### 配置项
 
-```js
-module.exports = {
-    extends: [
-        '@ecomfe/eslint-config/strict',
-    ],
-};
-```
+除`strict`外，其余选项均控制特写场景的规则，无该配置即完全禁用相关规则，你可以使用一个空对象（`{}`）表示按默认配置启用这一场景。
 
-## 扩展
-
-### `import`
-
-如果需要检测与 `import` 相关的规则，需要安装这个插件：
-
-```shell
-npm i -D eslint-plugin-import
-```
-
-并在 `.eslintrc.js` 中引用：
-
-```js
-module.exports = {
-    extends: [
-        '@ecomfe/eslint-config',
-        '@ecomfe/eslint-config/import',
-        // 或者选择严格模式
-        // '@ecomfe/eslint-config/import/strict',
-    ],
-};
-```
-
-注意这些规则会要求使用 ES6 的 `import` 来引入依赖，如果使用的是 `require` 则会出现检查错误，可禁用 `import/no-commonjs` 和 `import/unambiguous` 来解决。
-
-### React
-
-如果需要检测 React 相关的代码，需要安装相关插件：
-
-```shell
-npm i -D eslint-plugin-react eslint-plugin-react-hooks
-```
-
-并在 `.eslintrc.js` 中引用：
-
-```js
-module.exports = {
-    extends: [
-        '@ecomfe/eslint-config',
-        '@ecomfe/eslint-config/react',
-        // 或者选择严格模式
-        // '@ecomfe/eslint-config/react/strict',
-    ],
-};
-```
-
-会自动检测本地 React 的版本，默认情况下无需其它配置。
-
-### Vue
-
-如果需要检测 Vue 相关的代码，需要安装相关插件：
-
-```shell
-npm i -D eslint-plugin-vue
-```
-
-并在 `.eslintrc.js` 中引用：
-
-```js
-module.exports = {
-    extends: [
-        '@ecomfe/eslint-config',
-        '@ecomfe/eslint-config/vue', // 注意顺序
-        // 或者选择严格模式
-        // '@ecomfe/eslint-config/vue/strict',
-    ],
-};
-```
-
-### San
-
-如果需要检测 San 相关的代码，需要安装相关插件：
-
-```shell
-npm i -D eslint-plugin-san
-```
-
-并在 `.eslintrc.js` 中引用：
-
-```js
-module.exports = {
-    extends: [
-        '@ecomfe/eslint-config',
-        '@ecomfe/eslint-config/san', // 注意顺序
-        // 或者选择严格模式
-        // '@ecomfe/eslint-config/san/strict',
-    ],
-};
-```
-
-### TypeScript
-
-如果需要检测 TypeScript 代码，需要安装相关插件：
-
-```shell
-npm i -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
-```
-
-**除此之外，需要先安装`typescript`包，并在项目根目录有`tsconfig.json`文件**。
-
-并在`.eslintrc.js`中引用：
-
-```js
-module.exports = {
-    extends: [
-        '@ecomfe/eslint-config',
-        '@ecomfe/eslint-config/typescript',
-        // 或者选择严格模式
-        // '@ecomfe/eslint-config/typescript/strict',
-    ],
-};
-```
-
-## 细节
-
-默认配置 `@ecomfe/eslint-config` 与 [FECS](https://github.com/ecomfe/fecs) 相同，但临时移除了 `fecs-*` 的规则。
-
-严格版配置 `*/strict` 开启了更严格的规则。
+- `strict`：开启严格模式，会提升部分规则的约束。
+- `typeScript`：配置TS相关规则。
+  - `typeCheck`：是否启用需要类型的规则，这些规则速度较慢但能提高代码质量，默认为`true`。
+- `import`：配置模块引入、导出相关规则。
+  - `node`：是否Node项目，默认为`false`，即不允许使用Node原生模块。
+  - `webpack`：是否为Webpack项目，默认为`false`，当打开时会检查动态`import`需要配置`webpckChunkName`等规则。
+- `react`：是否启用React的相关规则。

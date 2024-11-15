@@ -1,12 +1,18 @@
 {
   "name": "@ecomfe/eslint-config",
   "version": "8.0.0",
+  "type": "module",
   "description": "ESLint config for Baidu EFE.",
-  "main": "index.js",
   "repository": "ecomfe/eslint-config",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "scripts": {
+    "watch": "tsc --project tsconfig.build.json --watch",
+    "build": "tsc --project tsconfig.build.json",
+    "lint": "eslint src",
+    "ci": "npm ci && npm run lint && npm run build",
     "deploy": "npm publish --access public",
-    "lint": "eslint import react vue san typescript *.js",
     "prepublishOnly": "npm run lint",
     "release": "standard-version"
   },
@@ -16,49 +22,24 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/eslint-parser": "^7.12.1",
-    "@babel/eslint-plugin": "^7.12.1",
-    "@typescript-eslint/eslint-plugin": "^4.11.0 || 5.x || 6.x",
-    "@typescript-eslint/parser": "^4.11.0 || 5.x || 6.x",
-    "eslint": "^6.2.0 || 7.x || 8.x",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-san": "^1.0.0",
-    "eslint-plugin-vue": "^9.17.0"
-  },
-  "peerDependenciesMeta": {
-    "eslint-plugin-import": {
-      "optional": true
-    },
-    "eslint-plugin-react": {
-      "optional": true
-    },
-    "eslint-plugin-react-hooks": {
-      "optional": true
-    },
-    "eslint-plugin-san": {
-      "optional": true
-    },
-    "eslint-plugin-vue": {
-      "optional": true
-    },
-    "@typescript-eslint/parser": {
-      "optional": true
-    },
-    "@typescript-eslint/eslint-plugin": {
-      "optional": true
-    }
+    "eslint": "9.x"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
-    "@babel/eslint-parser": "^7.16.5",
-    "@babel/eslint-plugin": "^7.16.5",
-    "eslint": "^8.5.0",
-    "standard-version": "^9.3.2"
+    "@babel/core": "^7.28.0",
+    "dprint": "^0.50.1",
+    "eslint": "^9.32.0",
+    "jiti": "^2.5.1",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
-    "semver": "^7.3.5"
+    "@babel/eslint-parser": "^7.28.0",
+    "@babel/eslint-plugin": "^7.27.1",
+    "globals": "^16.3.0",
+    "semver": "^7.7.2",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "typescript-eslint": "^8.39.0"
   }
 }
