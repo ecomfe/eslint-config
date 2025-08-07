@@ -231,6 +231,7 @@ export function configureTypeScript(options: TypeScriptConfigOptions = {}): Lint
                 'no-unreachable': 'off',
                 'no-unsafe-negation': 'off',
                 'no-with': 'off',
+                'no-duplicate-imports': 'off',
             },
         },
     ];

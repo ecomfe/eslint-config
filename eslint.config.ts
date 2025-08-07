@@ -1,4 +1,5 @@
-import {configure, Options} from './dist/index.js';
+import type {Options} from './dist/index.js';
+import {configure} from './dist/index.js';
 
 const options: Options = {
     strict: true,
