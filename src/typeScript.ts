@@ -1,6 +1,6 @@
 import type {Linter} from 'eslint';
 import {parser, plugin} from 'typescript-eslint';
-import {configureBase} from '../base/index.js';
+import {configureBase} from './base.js';
 
 export interface TypeScriptConfigOptions {
     strict?: boolean;

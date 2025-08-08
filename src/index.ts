@@ -1,7 +1,7 @@
-import {configureBase} from './base/index.js';
-import {configureImport, type ImportConfigOptions} from './import/index.js';
-import {configureReact, type ReactConfigOptions} from './react/index.js';
-import {configureTypeScript, type TypeScriptConfigOptions} from './typescript/index.js';
+import {configureBase} from './base.js';
+import {configureImport, type ImportConfigOptions} from './import.js';
+import {configureReact, type ReactConfigOptions} from './react.js';
+import {configureTypeScript, type TypeScriptConfigOptions} from './typeScript.js';
 
 type OmitStrict<T> = Omit<T, 'strict'>;
 

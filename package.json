@@ -9,7 +9,7 @@
   },
   "scripts": {
     "watch": "tsc --project tsconfig.build.json --watch",
-    "build": "tsc --project tsconfig.build.json",
+    "build": "rm -rf dist && tsc --project tsconfig.build.json",
     "lint": "eslint src",
     "ci": "npm ci && npm run lint && npm run build",
     "deploy": "npm publish --access public",
@@ -26,7 +26,6 @@
     "eslint": "9.x"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.0",
     "dprint": "^0.50.1",
     "eslint": "^9.32.0",
     "husky": "^9.1.7",
@@ -36,7 +35,7 @@
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.28.0",
-    "@babel/eslint-plugin": "^7.27.1",
+    "@stylistic/eslint-plugin": "^5.2.2",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
