@@ -19,8 +19,13 @@ import {configure, Options} from './dist/index.js';
 
 const options = {
     strict: true,
-    typeScript: {typeCheck: true},
-    import: {},
+    typeScript: {
+        typeCheck: true,
+    },
+    import: {
+        node: false,
+        webpack: false,
+    },
     react: {},
 };
 export default configure(options);

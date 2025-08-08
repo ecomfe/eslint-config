@@ -113,9 +113,7 @@ export function configureReact(options: ReactConfigOptions = {}): Linter.Config[
                 'react/jsx-props-no-multi-spaces': 'error',
                 'react/jsx-props-no-spread-multi': 'error',
                 'react/jsx-props-no-spreading': 'off',
-                'react/jsx-sort-default-props': 'off',
                 'react/jsx-sort-props': 'off',
-                'react/jsx-space-before-closing': ['error', 'always'],
                 'react/jsx-tag-spacing': [
                     'error',
                     {
