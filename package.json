@@ -14,7 +14,7 @@
     "ci": "npm ci && npm run lint && npm run build",
     "deploy": "npm publish --access public",
     "prepublishOnly": "npm run lint",
-    "release": "standard-version",
+    "release": "commit-and-tag-version",
     "prepare": "husky"
   },
   "author": "otakustay <otakustay@gmail.com> (https://github.com/otakustay)",
@@ -26,16 +26,18 @@
     "eslint": "9.x"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "commit-and-tag-version": "^12.5.2",
     "dprint": "^0.50.1",
-    "eslint": "^9.32.0",
+    "eslint": "^9.33.0",
     "husky": "^9.1.7",
     "jiti": "^2.5.1",
-    "standard-version": "^9.5.0",
     "typescript": "^5.9.2"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.28.0",
-    "@stylistic/eslint-plugin": "^5.2.2",
+    "@stylistic/eslint-plugin": "^5.2.3",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
