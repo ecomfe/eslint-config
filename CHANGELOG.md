@@ -1,6 +1,18 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [9.0.0-beta.0](https://github.com/ecomfe/eslint-config/compare/v8.0.0...v9.0.0-beta.0) (2025-08-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* require eslint >= 9
+
+### Features
+
+* support flat config ([695d541](https://github.com/ecomfe/eslint-config/commit/695d54100e6856300fee135736d8a25d42723ae8))
+* update eslint & stylistic rules ([8fa347e](https://github.com/ecomfe/eslint-config/commit/8fa347ea7d32d79b9c1662118efaf41639f3003c))
 
 ## [8.0.0](https://github.com/ecomfe/eslint-config/compare/v7.5.1...v8.0.0) (2023-09-15)
 
