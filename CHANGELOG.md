@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [9.0.0-beta.1](https://github.com/ecomfe/eslint-config/compare/v9.0.0-beta.0...v9.0.0-beta.1) (2025-11-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* require eslint >= 9
+
+### Features
+
+* support flat config ([76974ba](https://github.com/ecomfe/eslint-config/commit/76974ba718898a61037a3659a61dba05eb388a5e))
+* update eslint & stylistic rules ([c0bf1bb](https://github.com/ecomfe/eslint-config/commit/c0bf1bb285b5b65a2ea8106e553cd20038cb9c0d))
+
 ## [9.0.0-beta.0](https://github.com/ecomfe/eslint-config/compare/v8.0.0...v9.0.0-beta.0) (2025-08-12)
 
 
